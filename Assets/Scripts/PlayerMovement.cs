@@ -6,14 +6,23 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float moveAccel = 1f;
     
     private Rigidbody playerRigid;
+
+    private GameObject player;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-         playerRigid = GetComponentInChildren<Rigidbody>();
+        playerRigid = GetComponentInChildren<Rigidbody>();
 
         if(playerRigid == null)
         {
             Debug.LogError("Failed to find the player's rigid body component!");
+        }
+
+        player = GetComponentInParent<GameObject>();
+
+        if(player == null)
+        {
+            Debug.LogError("Failed to get parent of The Player!");
         }
     }
 
@@ -36,5 +45,10 @@ public class PlayerMovement : MonoBehaviour
             }
             
             playerRigid.linearVelocity = newVelocity;
+    }
+
+    void LateUpdate()
+    {
+        //player.transform.position = transform.position;
     }
 }
