@@ -17,13 +17,6 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.LogError("Failed to find the player's rigid body component!");
         }
-
-        player = GetComponentInParent<GameObject>();
-
-        if(player == null)
-        {
-            Debug.LogError("Failed to get parent of The Player!");
-        }
     }
 
     // Update is called once per frame
@@ -45,10 +38,5 @@ public class PlayerMovement : MonoBehaviour
             }
             
             playerRigid.linearVelocity = newVelocity;
-    }
-
-    void LateUpdate()
-    {
-        //player.transform.position = transform.position;
     }
 }
