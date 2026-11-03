@@ -11,12 +11,12 @@ public class ResultManager : MonoBehaviour
 
     public void ShowResults(bool won, int health, float time, int highestCombo)
     {
-        // The following has placeholders, must call functions to properly display text.
-        resultTitle.text = won ? "YOU WIN!" : "YOU LOSE!"; // properly define how the player wins or loses to show the result
+        //Peter: The following has placeholders, must call functions to properly display text.
+        resultTitle.text = won ? "YOU WIN!" : "YOU LOSE!"; //P: properly define how the player wins or loses to show the result
         
-        healthText.text = "HEALTH: " + health; //replace with health function from player
-        timeText.text = "TIME: " + FormatTime(time); //create a timer function
-        comboText.text = "HIGHEST COMBO: x" + highestCombo; //create a function that is called here that counts the highest combo
+        healthText.text = "HEALTH: " + health; //P: replace with health function from player
+        timeText.text = "TIME: " + FormatTime(time); //P: create a timer function
+        comboText.text = "HIGHEST COMBO: x" + highestCombo; //P: create a function that is called here that counts the highest combo
     }
 
     string FormatTime(float time)
