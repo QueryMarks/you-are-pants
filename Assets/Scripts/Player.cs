@@ -16,20 +16,31 @@ public class Player : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        Debug.Log("welcome to my awesome player start");
         playerRigid = GetComponentInChildren<Rigidbody>();
 
         if(playerRigid == null)
         {
             Debug.LogError("Failed to find the player's rigid body component!");
         }
+        stateMachine = GetComponent<StateMachine>();
+        if (stateMachine != null)
+        {
+            stateMachine.StateInit(new PlayerIdle());
+        }
+        else
+        {
 
-        stateMachine.StateInit(new PlayerIdle());
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Debug.Log("IT JUMPS IN THE NORMAL PLAYER WORLD");
+        }    
     }
 
     public void Die()
@@ -68,20 +79,21 @@ public class Player : MonoBehaviour
         playerRigid.linearVelocity = newVelocity;
     }
 
-    public void JumpCheck()
+    public bool JumpCheck()
     {
         if (IsGrounded() == true)
         {
             //Allow jump
-            Vector3 newVelocity = playerRigid.linearVelocity;
-
-
-            if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
+            //Debug.Log("Jumping time. am i jumping?");
+            if (Input.GetKey(KeyCode.Space))
             {
-                newVelocity.y = jumpPower;
+                Debug.Log("I am jumping");
+                return true;
             }
 
-            playerRigid.linearVelocity = newVelocity;
+            
+            return false;
         }
+        else return false;
     }
 }

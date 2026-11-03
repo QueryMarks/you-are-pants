@@ -10,6 +10,7 @@ public class PlayerRun : PlayerState
         
         if (Input.GetAxisRaw("Horizontal") == 0)
         {
+            playerRigid.linearVelocity = Vector3.zero;
             stateMachine.ChangeState(new PlayerIdle());
         }
         else

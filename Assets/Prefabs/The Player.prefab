@@ -127,6 +127,7 @@ GameObject:
   - component: {fileID: 5826800103104902308}
   - component: {fileID: 4087021100393175992}
   - component: {fileID: 2694441333679264280}
+  - component: {fileID: 7952921073853464940}
   m_Layer: 0
   m_Name: The Player
   m_TagString: ThePlayer
@@ -157,7 +158,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7360598014820479655}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1bd200a2811d62d47bffc199b6ffafeb, type: 3}
   m_Name: 
@@ -171,7 +172,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7360598014820479655}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b84fcb8c28b6db4c92fa1665626a0c5, type: 3}
   m_Name: 
@@ -217,3 +218,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd32b6b8b05431a49a87569914b1021f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  movePower: 2
+  moveAccel: 1
+  maxJumpHeight: 10
+  jumpPower: 10
+  playerRigid: {fileID: 0}
+  stateMachine: {fileID: 0}
+--- !u!114 &7952921073853464940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7360598014820479655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc48da020e0fbbd43bd2dd8df8622c93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StateMachine
