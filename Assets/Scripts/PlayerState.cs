@@ -19,9 +19,11 @@ public class PlayerState : State
         if (!myObject.GetComponent<Health>().LoseHealth(damager.damage))
         {
             Debug.Log("I AM THE PLAYER, AND I HAVE DIED.");
-            //insert resetting level logic here;
+            //insert resetting level logic in a player method, such as:
+            
+            //player.Die();
         }
         //if this state should be stunnable, include logic here, such as
-        //StateMachine.ChangeState(new StunState());
+        //StateMachine.ChangeState(new PlayerStunState());
     }
 }
