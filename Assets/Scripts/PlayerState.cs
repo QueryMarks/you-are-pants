@@ -2,14 +2,16 @@ using UnityEngine;
 
 public class PlayerState : State
 {
-    //Player player;
+    public Player player;
+    public Rigidbody playerRigid;
     public override void Enter()
     {
         //run the base state enter
         base.Enter();
         stateName = "playerState";
         //add the player's scripts, such as:
-        //player = myObject.GetComponent<Player>();
+        player = myObject.GetComponent<Player>();
+        playerRigid = player.playerRigid;
         
     }
 

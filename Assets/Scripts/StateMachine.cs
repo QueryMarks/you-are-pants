@@ -4,15 +4,14 @@ public class StateMachine : MonoBehaviour
 {
     GameObject myObject;
     [SerializeField] State currentState;
-    public State startState;
+    //public State startState;
 
     void Start()
     {
         myObject = this.gameObject;
-
     }
 
-    void StateInit()
+    public void StateInit(State startState)
     {
         if (startState != null)
         {
@@ -27,10 +26,10 @@ public class StateMachine : MonoBehaviour
     public void ChangeState(State state)
     {
         currentState.Exit();
-        startState = state;
-        startState.myObject = myObject;
-        startState.stateMachine = this;
-        startState.Enter();
+        currentState = state;
+        currentState.myObject = myObject;
+        currentState.stateMachine = this;
+        currentState.Enter();
     }
     
     public void TakeDamage(Damager damage)
