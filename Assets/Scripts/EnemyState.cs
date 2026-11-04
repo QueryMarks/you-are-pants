@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class enemyState : State
+public class EnemyState : State
 {
     //reference to enemy here;
     //Enemy enemy;

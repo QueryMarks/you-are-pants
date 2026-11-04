@@ -19,4 +19,12 @@ public class PlayerRun : PlayerState
         }    
             
     }
+    public override void Update()
+    {
+        if (player.JumpCheck() == true)
+        {
+            Debug.Log("Switching to JUMP!!!!");
+            stateMachine.ChangeState(new PlayerJump());
+        }
+    }
 }

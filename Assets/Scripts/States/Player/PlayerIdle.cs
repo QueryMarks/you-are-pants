@@ -16,10 +16,6 @@ public class PlayerIdle : PlayerState
 
     public override void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Debug.Log("JUMP IT!!!");
-        }
         //Debug.Log("welcome to my awesome idle state update");
         if (player.JumpCheck() == true)
         {
