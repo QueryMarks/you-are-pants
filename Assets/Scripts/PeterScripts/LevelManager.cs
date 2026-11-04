@@ -4,9 +4,16 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     public float loadDelay = 0.5f;
+
+    public bool canWin = false;
+
     public void OnCollisionEnter(Collision collision)
     {
-        Invoke(nameof(Load), loadDelay);
+        if(canWin == true)
+        {
+            Invoke(nameof(Load), loadDelay);
+        }
+        
 
     }
     public void LoadNextLevel()

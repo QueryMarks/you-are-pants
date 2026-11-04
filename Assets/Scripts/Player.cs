@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
             Debug.LogError("Failed to find the player's rigid body component!");
         }
 
-        stateMachine.StateInit(new PlayerIdle());
+        //stateMachine.StateInit(new PlayerIdle());
     }
 
     // Update is called once per frame
