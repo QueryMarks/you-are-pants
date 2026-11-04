@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -59,5 +60,19 @@ public class EnemyHealth : MonoBehaviour
 
         tmp.text = currentHealth.ToString() + "/" + maxHealth.ToString();
 
+        if(currentHealth <= 0)
+        {
+            die();
+        }
+
+    }
+
+    private void die()
+    {
+        //I am dead lmao! Update your state stuff here? - ME
+        LevelManager.updateDead();
+        tmp.gameObject.SetActive(false);
+        hpCon.SetActive(false);
+        gameObject.SetActive(false);
     }
 }

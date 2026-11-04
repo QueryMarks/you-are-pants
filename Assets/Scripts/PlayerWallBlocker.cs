@@ -4,6 +4,8 @@ public class PlayerWallBlocker : MonoBehaviour
 {
     bool isDead = false;
 
+    public int numToDie = 1;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -13,12 +15,20 @@ public class PlayerWallBlocker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(numToDie <= LevelManager.getDead())
+        {
+            isDead = true;
+        }
+
+
         if(isDead == true)
         {
             //Disable the self!
             gameObject.SetActive(false);
         }
     }
+
+    
 
     void setIsDead(bool inStatus)
     {
