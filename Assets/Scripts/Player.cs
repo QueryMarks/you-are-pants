@@ -45,14 +45,6 @@ public class Player : MonoBehaviour
         {
             stateMachine.StateInit(new PlayerIdle());
         }
-        else
-        {
-
-<<<<<<< HEAD
-        }
-=======
-        //stateMachine.StateInit(new PlayerIdle());
->>>>>>> main
     }
 
     // Update is called once per frame

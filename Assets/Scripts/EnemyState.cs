@@ -3,14 +3,14 @@
 public class EnemyState : State
 {
     //reference to enemy here;
-    //Enemy enemy;
+    public Enemy enemy;
     public override void Enter()
     {
         //run the base state enter
         base.Enter();
         stateName = "enemyState";
         //add the enemy's scripts, such as:
-        //enemy = myObject.GetComponent<Enemy>();
+        enemy = myObject.GetComponent<Enemy>();
         
     }
 
@@ -21,9 +21,9 @@ public class EnemyState : State
         {
             Debug.Log("I AM AN ENEMY, AND I HAVE DIED.");
             //enemy.Die();
-            Object.Destroy(myObject);
+            enemy.health.BasicDie();
         }
         //if this state should be stunnable, include logic here, such as
-        //StateMachine.ChangeState(new EnemyStunState());
+        //stateMachine.ChangeState(new EnemyHurt());
     }
 }

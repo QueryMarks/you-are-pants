@@ -10,4 +10,12 @@ public class PlayerFall : PlayerState
             stateMachine.ChangeState(new PlayerIdle());
         }
     }
+
+    public override void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            stateMachine.ChangeState(new PlayerJab());
+        }
+    }
 }
