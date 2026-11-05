@@ -19,7 +19,8 @@ public class PlayerState : State
     {
         //player's reaction to damage
         bool survivedDamage = player.health.LoseHealth(damager.damage);
-        player.UpdateUI();
+        player.UpdateCombo(0);
+        //player.UpdateUI();
         if (!survivedDamage)
         {
             Debug.Log("I AM THE PLAYER, AND I HAVE DIED.");
