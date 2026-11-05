@@ -27,6 +27,7 @@ public class SwarmState : EnemyState
             //enemy.Die();
             enemy.health.BasicDie();
         }
+        enemy.health.TakeKnockback(damager);
         stateMachine.ChangeState(new SwarmHurt());
     }
 }

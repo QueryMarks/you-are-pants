@@ -54,6 +54,10 @@ public class Health : MonoBehaviour
     public void BasicDie()
     {
         Destroy(this.gameObject);
+        if (this.healthAlign == DMG_ALIGN.ENEMYDMG)
+        {
+            LevelManager.updateDead();
+        }
     }
 
     //returns true if the entity lives
