@@ -41,7 +41,9 @@ public class LevelManager : MonoBehaviour
 
     void Load()
     {
+        //why on earth were we doing the below? -Ethelyn
         //Time.timeScale = 0.5f;
+
         //SceneManager.LoadScene("ResultScene");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
