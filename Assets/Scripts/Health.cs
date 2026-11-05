@@ -51,7 +51,7 @@ public class Health : MonoBehaviour
         }
         rb.linearVelocity = new Vector3(damager.knockback.x * knockbackRight, damager.knockback.y, damager.knockback.z);
     }
-    void BasicDie()
+    public void BasicDie()
     {
         Destroy(this.gameObject);
     }
