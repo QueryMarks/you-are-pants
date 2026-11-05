@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class Player : MonoBehaviour
@@ -59,6 +60,7 @@ public class Player : MonoBehaviour
     public void Die()
     {
         Debug.Log("PLAYER SCRIPT! i have died");
+        SceneManager.LoadScene("ResultScene");
     }
 
     public bool IsGrounded()

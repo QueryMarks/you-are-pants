@@ -26,7 +26,7 @@ public class PlayerState : State
             Debug.Log("I AM THE PLAYER, AND I HAVE DIED.");
             //insert resetting level logic in a player method, such as:
             
-            //player.Die();
+            player.Die();
         }
         else
         {
