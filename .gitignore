@@ -112,3 +112,4 @@ InitTestScene*.unity*
 #I am adding all font files so stuff stops breaking! - ME
 *.ttf
 *.otf
+/Assets/TextMesh\ Pro
