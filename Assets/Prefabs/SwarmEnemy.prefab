@@ -103,7 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Health
   stateMachine: {fileID: 0}
   healthAlign: 1
-  health: 25
+  health: 18
   stunTimer: 0
 --- !u!114 &2903934441540784492
 MonoBehaviour:
@@ -391,6 +391,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Damager
   owner: {fileID: 1121976531230497832}
   damageAlign: 1
-  damage: 10
+  damage: 3
   hitstun: 0
   knockback: {x: 5, y: 4, z: 0}

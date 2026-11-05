@@ -17,7 +17,7 @@ public class StateMachine : MonoBehaviour
         {
             currentState = startState;
         }
-        startState.myObject = myObject;
+        startState.myObject = this.gameObject;
         startState.stateMachine = this;
         startState.Enter();
     }

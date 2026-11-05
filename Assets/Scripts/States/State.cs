@@ -15,6 +15,7 @@ public class State
     
     public virtual void Enter()
     {
+        myObject = stateMachine.gameObject;
         animator = myObject.GetComponent<Animator>();
     }
 
