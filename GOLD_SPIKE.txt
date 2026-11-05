@@ -1,0 +1,3 @@
+Our gold spike was a beat them up combo system. 
+We needed to prove that we could create a juggle based combo system that allows things to be stunned.
+We now have a state machine that allows for combos and the stunning of the player and enemies. 
