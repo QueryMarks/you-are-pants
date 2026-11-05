@@ -1096,7 +1096,7 @@ MonoBehaviour:
   owner: {fileID: 1698253834}
   damageAlign: 0
   damage: 15
-  hitstun: 0
+  hitstun: 120
   knockback: {x: 6, y: 8, z: 0}
 --- !u!135 &1129083642
 SphereCollider:
@@ -1356,7 +1356,7 @@ MonoBehaviour:
   owner: {fileID: 1698253834}
   damageAlign: 0
   damage: 8
-  hitstun: 0
+  hitstun: 60
   knockback: {x: -1, y: 3, z: 0}
 --- !u!135 &1513957144
 SphereCollider:
@@ -1706,6 +1706,10 @@ PrefabInstance:
       propertyPath: owner
       value: 
       objectReference: {fileID: 1698253834}
+    - target: {fileID: 8008227767635195712, guid: 9c7ad798e97dd2d4f93640d4628ef8d4, type: 3}
+      propertyPath: hitstun
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 8008227767635195712, guid: 9c7ad798e97dd2d4f93640d4628ef8d4, type: 3}
       propertyPath: knockback.x
       value: 2
