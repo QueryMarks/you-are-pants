@@ -4,10 +4,15 @@ public class PlayerIdle : PlayerState
     public override void Enter()
     {
         base.Enter();
+        player.animator.SetTrigger("Idle");
         //playerRigid.linearVelocity = new Vector3(0, playerRigid.linearVelocity.y;
     }
     public override void FixedUpdate()
     {
+        if (!player.IsGrounded())
+        {
+            stateMachine.ChangeState(new PlayerFall());
+        }
         if (Input.GetAxisRaw("Horizontal") != 0)
         {
             stateMachine.ChangeState(new PlayerRun());
@@ -21,6 +26,10 @@ public class PlayerIdle : PlayerState
         {
             Debug.Log("Switching to JUMP!!!!");
             stateMachine.ChangeState(new PlayerJump());
+        }
+        else if (Input.GetKeyDown(KeyCode.Z))
+        {
+            stateMachine.ChangeState(new PlayerJab());
         }
     }
 }

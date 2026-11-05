@@ -4,7 +4,7 @@ public class Health : MonoBehaviour
 {
     [SerializeField] StateMachine stateMachine;
     public DMG_ALIGN healthAlign = DMG_ALIGN.PLAYERDMG;
-    float health = 50;
+    public float health = 50;
 
     void Start()
     {
@@ -13,6 +13,7 @@ public class Health : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void TakeDamage (Damager damager)
     {
+        Debug.Log("TAKING DAMAGE!");
         if (stateMachine != null)
         {
             //state machine will ask the state to handle taking damage
@@ -20,8 +21,29 @@ public class Health : MonoBehaviour
         }
         else
         {
-            LoseHealth(damager.damage);
+            Rigidbody rb = GetComponentInChildren<Rigidbody>();
+            if (rb != null)
+            {
+                float myPosX = rb.position.x;
+                float damagerPosX = damager.owner.transform.position.x;
+                int knockbackRight = -1;
+                if (myPosX >= damagerPosX)
+                {
+                    knockbackRight = 1;
+                }
+                rb.linearVelocity = new Vector3(damager.knockback.x * knockbackRight, damager.knockback.y, damager.knockback.z);
+            }
+            if (!LoseHealth(damager.damage))
+            {
+                Invoke("BasicDie", 2f);
+            }
         }
+
+    }
+
+    void BasicDie()
+    {
+        Destroy(this.gameObject);
     }
 
     //returns true if the entity lives

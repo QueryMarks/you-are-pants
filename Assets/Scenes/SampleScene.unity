@@ -773,10 +773,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 999525701}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44324e08451d35d4d98b751dd19d3ed1, type: 3}
+  m_Script: {fileID: 11500000, guid: fa3ff45003abac448b017dfd5b5b099b, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
-  maxHealth: 3
+  m_EditorClassIdentifier: Assembly-CSharp::Health
+  stateMachine: {fileID: 0}
+  healthAlign: 1
+  health: 25
 --- !u!1 &1098792422
 GameObject:
   m_ObjectHideFlags: 0
@@ -903,9 +905,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 883b9eba9ef26c1428da412bc9ed5123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Damager
+  owner: {fileID: 1698253834}
   damageAlign: 0
-  damage: 8
+  damage: 15
   hitstun: 0.5
+  knockback: {x: 6, y: 8, z: 0}
 --- !u!135 &1129083642
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1145,9 +1149,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 883b9eba9ef26c1428da412bc9ed5123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Damager
+  owner: {fileID: 1698253834}
   damageAlign: 0
   damage: 8
   hitstun: 0.5
+  knockback: {x: -1, y: 3, z: 0}
 --- !u!135 &1513957144
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1363,6 +1369,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1577088007}
   m_CullTransparentMesh: 1
+--- !u!1 &1698253834 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7360598014820479655, guid: 9c7ad798e97dd2d4f93640d4628ef8d4, type: 3}
+  m_PrefabInstance: {fileID: 661650276379326096}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &661650276379326096
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1381,7 +1392,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 844449985722512728, guid: 9c7ad798e97dd2d4f93640d4628ef8d4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 844449985722512728, guid: 9c7ad798e97dd2d4f93640d4628ef8d4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1413,7 +1424,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1714265914208979536, guid: 9c7ad798e97dd2d4f93640d4628ef8d4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2022758127470585433, guid: 9c7ad798e97dd2d4f93640d4628ef8d4, type: 3}
       propertyPath: m_Name
@@ -1431,6 +1442,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Attack
       objectReference: {fileID: 0}
+    - target: {fileID: 2694441333679264280, guid: 9c7ad798e97dd2d4f93640d4628ef8d4, type: 3}
+      propertyPath: comboText
+      value: 
+      objectReference: {fileID: 616481510}
     - target: {fileID: 3387547149748368901, guid: 9c7ad798e97dd2d4f93640d4628ef8d4, type: 3}
       propertyPath: m_Controller
       value: 
@@ -1439,9 +1454,25 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 7261311501773840557, guid: 9c7ad798e97dd2d4f93640d4628ef8d4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7360598014820479655, guid: 9c7ad798e97dd2d4f93640d4628ef8d4, type: 3}
       propertyPath: m_Name
       value: The Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8008227767635195712, guid: 9c7ad798e97dd2d4f93640d4628ef8d4, type: 3}
+      propertyPath: owner
+      value: 
+      objectReference: {fileID: 1698253834}
+    - target: {fileID: 8008227767635195712, guid: 9c7ad798e97dd2d4f93640d4628ef8d4, type: 3}
+      propertyPath: knockback.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8008227767635195712, guid: 9c7ad798e97dd2d4f93640d4628ef8d4, type: 3}
+      propertyPath: knockback.y
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1470,6 +1501,10 @@ PrefabInstance:
     - target: {fileID: 597446927547580457, guid: 8c77c77d1b192bb4c882b01fe2754917, type: 3}
       propertyPath: m_Name
       value: Test Platform
+      objectReference: {fileID: 0}
+    - target: {fileID: 5080349525400464227, guid: 8c77c77d1b192bb4c882b01fe2754917, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.61
       objectReference: {fileID: 0}
     - target: {fileID: 5080349525400464227, guid: 8c77c77d1b192bb4c882b01fe2754917, type: 3}
       propertyPath: m_LocalPosition.x

@@ -8,6 +8,7 @@ public enum DMG_ALIGN
 
 public class Damager : MonoBehaviour
 {
+    public GameObject owner;
     //Alignment is if the damage is for enemies or players
     
     [SerializeField] DMG_ALIGN damageAlign = DMG_ALIGN.PLAYERDMG;
@@ -15,24 +16,36 @@ public class Damager : MonoBehaviour
     //how long to stun an enemy in seconds
     public float hitstun = 0.5f;
 
+    public Vector3 knockback;
+
+    Player player;
 
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        if (damageAlign == DMG_ALIGN.PLAYERDMG)
+        {
+            player = owner.GetComponent<Player>();
+        }
     }
 
     // Update is called once per frame
-    void OnTriggerEnter2D(Collider2D collider)
+    void OnTriggerEnter(Collider collider)
     {
-        Health health = collider.GetComponent<Health>();
+        Debug.Log("entering");
+        Health health = collider.GetComponentInParent<Health>();
         if (health != null)
         {
+            Debug.Log("found health");
             if (health.healthAlign != damageAlign)
             {
                 health.TakeDamage(this);
+                if (damageAlign == DMG_ALIGN.PLAYERDMG)
+                {
+                    player.UpdateCombo(player.combo + 1);
+                }
             }
         }
     }

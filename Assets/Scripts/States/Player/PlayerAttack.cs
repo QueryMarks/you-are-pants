@@ -2,10 +2,33 @@ using UnityEngine;
 
 public class PlayerAttack: PlayerState
 {
-    string anim;
+    public string anim;
+    public Animator animator;
     public override void Enter()
     {
         base.Enter();
-        player.GetComponent<Animator>().SetTrigger(anim);
+        animator = player.GetComponent<Animator>();
+        animator.SetTrigger(anim);
+    }
+    public override void Exit()
+    {
+        player.cancelCheck = false;
+    }
+
+    public override void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Z) && player.cancelCheck)
+        {
+            AttackCancel();
+        }
+        else if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
+        {
+            stateMachine.ChangeState(new PlayerIdle());
+        }
+    }
+
+    public virtual void AttackCancel()
+    {
+
     }
 }

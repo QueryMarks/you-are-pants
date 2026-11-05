@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
@@ -7,15 +8,27 @@ public class Player : MonoBehaviour
     public float moveAccel = 1f;
     public float maxJumpHeight = 10f;
     public float jumpPower = 10f;
-    
+
+    public Animator animator;
     public Rigidbody playerRigid;
 
     public StateMachine stateMachine;
 
     private GameObject myObject;
+
+    public int facing = 1;
+
+    public int combo = 0;
+    [SerializeField] TextMeshProUGUI comboText;
+
+
+    //A bool used for cancelling attacks in combos early. Set/unset by the animator, and checked/unset by the player's state.
+    public bool cancelCheck;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        myObject = this.gameObject;
+        animator = GetComponent<Animator>();
         Debug.Log("welcome to my awesome player start");
         playerRigid = GetComponentInChildren<Rigidbody>();
 
@@ -95,5 +108,27 @@ public class Player : MonoBehaviour
             return false;
         }
         else return false;
+    }
+
+    //-1 for face left,
+    public void Face(bool faceRight)
+    {
+        if (faceRight)
+        {
+            facing = 1;
+            
+        }
+        else
+        {
+
+            facing = -1;
+        }
+        myObject.transform.localScale = new Vector3(facing, 1, 1);
+    }
+
+    public void UpdateCombo(int amount)
+    {
+        combo = amount;
+        comboText.text = "Combo: " + amount.ToString();
     }
 }
