@@ -14,7 +14,7 @@ public class Damager : MonoBehaviour
     [SerializeField] DMG_ALIGN damageAlign = DMG_ALIGN.PLAYERDMG;
     public float damage = 10;
     //how long to stun an enemy in seconds
-    public float hitstun = 0.5f;
+    public int hitstun = 30;
 
     public Vector3 knockback;
 

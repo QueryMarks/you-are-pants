@@ -611,7 +611,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 988831976}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b27a140c9345dc4ba05ca4754e5589a, type: 3}
   m_Name: 
@@ -779,6 +779,7 @@ MonoBehaviour:
   stateMachine: {fileID: 0}
   healthAlign: 1
   health: 25
+  stunTimer: 0
 --- !u!1 &1098792422
 GameObject:
   m_ObjectHideFlags: 0
@@ -1374,6 +1375,22 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7360598014820479655, guid: 9c7ad798e97dd2d4f93640d4628ef8d4, type: 3}
   m_PrefabInstance: {fileID: 661650276379326096}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1698253842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1698253834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa3ff45003abac448b017dfd5b5b099b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Health
+  stateMachine: {fileID: 0}
+  healthAlign: 0
+  health: 50
+  stunTimer: 0
 --- !u!1001 &661650276379326096
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1446,6 +1463,14 @@ PrefabInstance:
       propertyPath: comboText
       value: 
       objectReference: {fileID: 616481510}
+    - target: {fileID: 2694441333679264280, guid: 9c7ad798e97dd2d4f93640d4628ef8d4, type: 3}
+      propertyPath: movePower
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2694441333679264280, guid: 9c7ad798e97dd2d4f93640d4628ef8d4, type: 3}
+      propertyPath: healthText
+      value: 
+      objectReference: {fileID: 1577088009}
     - target: {fileID: 3387547149748368901, guid: 9c7ad798e97dd2d4f93640d4628ef8d4, type: 3}
       propertyPath: m_Controller
       value: 
@@ -1483,7 +1508,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1714265914208979536, guid: 9c7ad798e97dd2d4f93640d4628ef8d4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1129083640}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7360598014820479655, guid: 9c7ad798e97dd2d4f93640d4628ef8d4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1698253842}
   m_SourcePrefab: {fileID: 100100000, guid: 9c7ad798e97dd2d4f93640d4628ef8d4, type: 3}
 --- !u!4 &661650276379326097 stripped
 Transform:

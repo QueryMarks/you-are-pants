@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public float maxJumpHeight = 10f;
     public float jumpPower = 10f;
 
+    public Health health;
     public Animator animator;
     public Rigidbody playerRigid;
 
@@ -20,6 +21,8 @@ public class Player : MonoBehaviour
 
     public int combo = 0;
     [SerializeField] TextMeshProUGUI comboText;
+    [SerializeField] TextMeshProUGUI healthText;
+    
 
 
     //A bool used for cancelling attacks in combos early. Set/unset by the animator, and checked/unset by the player's state.
@@ -29,6 +32,7 @@ public class Player : MonoBehaviour
     {
         myObject = this.gameObject;
         animator = GetComponent<Animator>();
+        health = GetComponent<Health>();
         Debug.Log("welcome to my awesome player start");
         playerRigid = GetComponentInChildren<Rigidbody>();
 
@@ -129,6 +133,12 @@ public class Player : MonoBehaviour
     public void UpdateCombo(int amount)
     {
         combo = amount;
-        comboText.text = "Combo: " + amount.ToString();
+        UpdateUI();
+    }
+
+    public void UpdateUI()
+    {
+        comboText.text = "Combo: " + combo.ToString();
+        healthText.text = "Health: " + health.health.ToString();
     }
 }

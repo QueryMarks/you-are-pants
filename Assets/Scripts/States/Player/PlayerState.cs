@@ -18,12 +18,20 @@ public class PlayerState : State
     public override void TakeDamage(Damager damager)
     {
         //player's reaction to damage
-        if (!myObject.GetComponent<Health>().LoseHealth(damager.damage))
+        bool survivedDamage = player.health.LoseHealth(damager.damage);
+        player.UpdateUI();
+        if (!survivedDamage)
         {
             Debug.Log("I AM THE PLAYER, AND I HAVE DIED.");
             //insert resetting level logic in a player method, such as:
             
             //player.Die();
+        }
+        else
+        {
+            PlayerHurt hurt = new PlayerHurt();
+            player.health.TakeKnockback(damager);
+            stateMachine.ChangeState(new PlayerHurt());
         }
         //if this state should be stunnable, include logic here, such as
         //StateMachine.ChangeState(new PlayerStunState());
