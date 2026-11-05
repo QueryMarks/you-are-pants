@@ -10,9 +10,16 @@ public class LevelManager : MonoBehaviour
     static public int maxEnemies;
     static private int deadEnemies = 0;
 
+    
+
+    public void Awake()
+    {
+        
+    }
+
     public void Start()
     {
-        maxEnemies = GameObject.FindGameObjectsWithTag("Enemy").Length;
+       maxEnemies = GameObject.FindGameObjectsWithTag("Enemy").Length;
         //Debug.Log("Number of enemies found in level! " + maxEnemies);
     }
 
@@ -22,6 +29,7 @@ public class LevelManager : MonoBehaviour
         {
             canWin = true;
         }
+        Debug.Log("Enemies to kill: " + maxEnemies);
     }
 
     public void OnTriggerEnter(Collider collision)
@@ -56,5 +64,11 @@ public class LevelManager : MonoBehaviour
     static public int getDead()
     {
         return deadEnemies;
+    }
+
+    static public void giveEnemies(int inEnemies)
+    {
+        Debug.Log("Got: " + inEnemies);
+        maxEnemies += inEnemies;
     }
 }

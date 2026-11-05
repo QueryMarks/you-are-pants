@@ -9,6 +9,24 @@ public class SpawnTrigger : MonoBehaviour
 
     private bool hasSpawned = false;
 
+    bool coolThing = true;
+
+    public void Start()
+    {
+        //Debug.Log("Count: " + enemyCount);
+        
+        //Debug.Log("Gave away!");
+    }
+
+    public void Update()
+    {
+        if(coolThing == true)
+        {
+            LevelManager.giveEnemies(enemyCount);
+            coolThing = false;
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("ThePlayer") && !hasSpawned)
@@ -28,4 +46,12 @@ public class SpawnTrigger : MonoBehaviour
             hasSpawned = true;
         }
     }
+
+    public int getEnemyCount()
+    {
+        return enemyCount;
+    }
+
+        
+    
 }

@@ -2120,6 +2120,14 @@ PrefabInstance:
       propertyPath: health
       value: 
       objectReference: {fileID: 1577088009}
+    - target: {fileID: 2907797959252532333, guid: 1c33a14bf144aa049a04e162995157f9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4489158385291448962, guid: 1c33a14bf144aa049a04e162995157f9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8384304366240015412, guid: 1c33a14bf144aa049a04e162995157f9, type: 3}
       propertyPath: m_Name
       value: Manager
