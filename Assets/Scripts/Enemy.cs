@@ -78,11 +78,7 @@ public abstract class Enemy : MonoBehaviour
     }
 
     public void Die()
-    {
-        tmp.gameObject.SetActive(false);
-        rect.gameObject.SetActive(false);
-        hpCon.gameObject.SetActive(false);
-        
+    {        
         health.BasicDie();
     }
     public void Face(bool faceRight)
@@ -98,5 +94,12 @@ public abstract class Enemy : MonoBehaviour
             facing = -1;
         }
         myObject.transform.localScale = new Vector3(facing, 1, 1);
+    }
+
+    public void KillUI()
+    {
+        tmp.gameObject.SetActive(false);
+        hpCon.SetActive(false);
+        gameObject.SetActive(false);
     }
 }

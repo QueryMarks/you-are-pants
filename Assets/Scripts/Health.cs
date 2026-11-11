@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 public class Health : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class Health : MonoBehaviour
         {
             //state machine will ask the state to handle taking damage
             stateMachine.TakeDamage(damager);
+            
         }
         else
         {
@@ -49,6 +51,12 @@ public class Health : MonoBehaviour
         if (this.healthAlign == DMG_ALIGN.ENEMYDMG)
         {
             LevelManager.updateDead();
+            Enemy thing = GetComponent<Enemy>();
+
+            if(thing != null)
+            {
+                thing.KillUI();
+            }
         }
     }
 
