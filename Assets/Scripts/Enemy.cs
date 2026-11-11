@@ -98,8 +98,8 @@ public abstract class Enemy : MonoBehaviour
 
     public void KillUI()
     {
-        tmp.gameObject.SetActive(false);
-        hpCon.SetActive(false);
-        gameObject.SetActive(false);
+        Destroy(tmp);//.gameObject.SetActive(false);
+        Destroy(hpCon);//.SetActive(false);
+        Destroy(gameObject);//.SetActive(false);
     }
 }
