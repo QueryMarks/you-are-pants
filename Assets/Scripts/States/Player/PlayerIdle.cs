@@ -24,7 +24,7 @@ public class PlayerIdle : PlayerState
         //Debug.Log("welcome to my awesome idle state update");
         if (player.JumpCheck() == true)
         {
-            Debug.Log("Switching to JUMP!!!!");
+            //Debug.Log("Switching to JUMP!!!!");
             stateMachine.ChangeState(new PlayerJump());
         }
         else if (Input.GetKeyDown(KeyCode.Z))
