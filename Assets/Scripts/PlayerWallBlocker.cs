@@ -91,7 +91,7 @@ public class PlayerWallBlocker : MonoBehaviour
                     }
                     else
                     {
-                        Debug.LogError("ERERERER");
+                        //Debug.LogError("ERERERER");
                     }
 
                 }

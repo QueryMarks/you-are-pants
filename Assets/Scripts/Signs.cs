@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System;
 
 public class Signs : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Signs : MonoBehaviour
     private  RectTransform rect;
     [SerializeField] string signText = "Default Text";
     [SerializeField] Vector2 position = new Vector3(0f,1.5f);
+    [SerializeField] float fontSize = 24;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -19,7 +21,7 @@ public class Signs : MonoBehaviour
         tmp = hpCon.AddComponent<TextMeshProUGUI>();
 
         tmp.text = signText;
-        tmp.fontSize = 12;
+        tmp.fontSize = fontSize;
         tmp.color = Color.white;
         tmp.transform.localPosition = new Vector3(transform.position.x,transform.position.y + 1.5f,transform.position.z);//new Vector3(0, 1.5f, 0);
         //Debug.Log(tmp.transform.position);
