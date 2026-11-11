@@ -7,8 +7,6 @@ public class Signs : MonoBehaviour
 
     private GameObject hpCon;
     private  RectTransform rect;
-    [SerializeField] TextMeshProUGUI box;
-
     [SerializeField] string signText = "Default Text";
     [SerializeField] Vector2 position = new Vector3(0f,1.5f);
 
