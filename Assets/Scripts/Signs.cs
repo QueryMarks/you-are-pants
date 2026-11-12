@@ -11,6 +11,8 @@ public class Signs : MonoBehaviour
     [SerializeField] string signText = "Default Text";
     [SerializeField] Vector2 position = new Vector3(0f,1.5f);
     [SerializeField] float fontSize = 24;
+    [SerializeField] float textBoxWidth = 300;
+    [SerializeField] float textBoxHeight = 100;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -30,7 +32,7 @@ public class Signs : MonoBehaviour
         tmp.alignment = TextAlignmentOptions.Center;
 
         rect = hpCon.GetComponent<RectTransform>();
-        rect.sizeDelta = new Vector2(300, 100);
+        rect.sizeDelta = new Vector2(textBoxWidth, textBoxHeight);
         rect.anchoredPosition = Vector2.zero;
         rect.transform.localPosition =  new Vector3(transform.position.x,transform.position.y + 1.5f,transform.position.z);
 

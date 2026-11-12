@@ -82,17 +82,21 @@ public class PlayerWallBlocker : MonoBehaviour
                 //Loop through boxs and check if they are in the right spot!
                 foreach(GameObject obj in buttons)
                 {
-                    if(obj.GetComponent<PuzzleButtons>())
+                    if(obj != null)
                     {
-                        if(obj.GetComponent<PuzzleButtons>().GetButtonState() == true)
+                        if(obj.GetComponent<PuzzleButtons>())
                         {
-                            numBoxesTrue++;
+                            if(obj.GetComponent<PuzzleButtons>().GetButtonState() == true)
+                            {
+                                numBoxesTrue++;
+                            }
+                        }
+                        else
+                        {
+                            //Debug.LogError("ERERERER");
                         }
                     }
-                    else
-                    {
-                        //Debug.LogError("ERERERER");
-                    }
+                    
 
                 }
 
