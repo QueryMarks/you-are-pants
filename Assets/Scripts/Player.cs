@@ -46,6 +46,8 @@ public class Player : MonoBehaviour
         {
             stateMachine.StateInit(new PlayerIdle());
         }
+
+        UpdateUI();
     }
 
     // Update is called once per frame
@@ -138,5 +140,10 @@ public class Player : MonoBehaviour
     {
         comboText.text = "Combo: " + combo.ToString();
         healthText.text = "Health: " + health.health.ToString();
+    }
+
+    public float GetHP()
+    {
+        return health.GetHealth();
     }
 }
