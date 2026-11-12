@@ -81,7 +81,7 @@ public class PuzzleButtons : MonoBehaviour
             else
             {
                 //Debug.Log("ASDASD");
-                rb.linearVelocity = new Vector3(0,0,0);
+                rb.linearVelocity = Vector3.zero;
                 transform.position = respawnSpot;
             }
 

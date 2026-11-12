@@ -2607,7 +2607,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -88, y: -11, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1376080897}
@@ -2645,7 +2645,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7efe8afbdd5d2244b95920f54f2d09f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PitTeleport
-  returnPosition: {x: 0, y: 0, z: 0}
+  returnPosition: {x: -110, y: 3, z: 0}
 --- !u!1001 &1513405505
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4149,25 +4149,9 @@ PrefabInstance:
       propertyPath: healthText
       value: 
       objectReference: {fileID: 1577088009}
-    - target: {fileID: 5791425260878130985, guid: 9c7ad798e97dd2d4f93640d4628ef8d4, type: 3}
-      propertyPath: knockback.y
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6450060421790800775, guid: 9c7ad798e97dd2d4f93640d4628ef8d4, type: 3}
-      propertyPath: m_TagString
-      value: ThePlayer
-      objectReference: {fileID: 0}
     - target: {fileID: 7360598014820479655, guid: 9c7ad798e97dd2d4f93640d4628ef8d4, type: 3}
       propertyPath: m_Name
       value: The Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8008227767635195712, guid: 9c7ad798e97dd2d4f93640d4628ef8d4, type: 3}
-      propertyPath: knockback.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8008227767635195712, guid: 9c7ad798e97dd2d4f93640d4628ef8d4, type: 3}
-      propertyPath: knockback.y
-      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

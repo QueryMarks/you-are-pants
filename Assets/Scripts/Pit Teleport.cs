@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PitTeleport : MonoBehaviour
 {
-    [SerializeField] Vector3 returnPosition = new Vector3(0,0,0);
+    [SerializeField] Vector3 returnPosition =  Vector3.zero;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -15,11 +15,24 @@ public class PitTeleport : MonoBehaviour
         
     }
 
-    public void OggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "The Player")
+        Rigidbody rb;
+        if(other.tag == "ThePlayer")
         {
+            if(returnPosition == Vector3.zero)
+            {
+                Debug.LogError("Pit returns the player to 0,0,0\nMake sure this is intended behavior!");
+            }
+            
             other.transform.position = returnPosition;
+            
+            rb = other.GetComponent<Rigidbody>();
+
+            if(rb)
+            {
+               rb.linearVelocity = Vector3.zero; 
+            }
         }
         else
         {
