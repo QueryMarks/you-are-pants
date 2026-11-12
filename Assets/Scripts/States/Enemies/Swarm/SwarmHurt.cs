@@ -16,6 +16,8 @@ public class SwarmHurt : SwarmState
         {
             stateMachine.ChangeState(new SwarmIdle());
         }
+
+        
     }
     public override void Exit()
     {

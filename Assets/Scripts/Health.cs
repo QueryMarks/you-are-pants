@@ -1,5 +1,5 @@
+using Unity.VisualScripting;
 using UnityEngine;
-
 public class Health : MonoBehaviour
 {
     [SerializeField] StateMachine stateMachine;
@@ -8,21 +8,15 @@ public class Health : MonoBehaviour
     public int stunTimer = 0;
     Player player;
 
-
-    void Start()
-    {
-        stateMachine = GetComponent<StateMachine>();
-        player = GetComponent<Player>();
-    }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void TakeDamage (Damager damager)
     {
-        Debug.Log("TAKING DAMAGE!");
+        //Debug.Log("TAKING DAMAGE!");
         stunTimer = damager.hitstun;
         if (stateMachine != null)
         {
             //state machine will ask the state to handle taking damage
             stateMachine.TakeDamage(damager);
+            
         }
         else
         {
@@ -33,7 +27,7 @@ public class Health : MonoBehaviour
             }
             if (!LoseHealth(damager.damage))
             {
-                Invoke("BasicDie", 2f);
+                Invoke("BasicDie",0f);
             }
         }
 
@@ -57,6 +51,12 @@ public class Health : MonoBehaviour
         if (this.healthAlign == DMG_ALIGN.ENEMYDMG)
         {
             LevelManager.updateDead();
+            Enemy thing = GetComponent<Enemy>();
+
+            if(thing != null)
+            {
+                thing.KillUI();
+            }
         }
     }
 
@@ -77,5 +77,10 @@ public class Health : MonoBehaviour
     public void GainHealth(float amount)
     {
         health += amount;
+    }
+
+    public float GetHealth()
+    {
+        return health;
     }
 }
