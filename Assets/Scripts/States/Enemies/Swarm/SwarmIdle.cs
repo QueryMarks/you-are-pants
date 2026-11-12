@@ -14,15 +14,17 @@ public class SwarmIdle : SwarmState
         float dist = Mathf.Abs(Vector3.Distance(
             enemy.gameObject.transform.position,
             enemy.player.transform.position));
-        Debug.Log(dist);
+        //Debug.Log(dist);
         if (dist <= swarm.chaseDistance)
         {
-            Debug.Log("CHASE THE PLAYER DOWN!!!!!!");
+            //Debug.Log("CHASE THE PLAYER DOWN!!!!!!");
             stateMachine.ChangeState(new SwarmChase());
         }
         else
         {
             enemy.enemyRigid.linearVelocity = new Vector3(0, Mathf.Sin(Time.fixedTime), 0);
         }
+
+        
     }
 }

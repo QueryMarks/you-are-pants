@@ -34,11 +34,11 @@ public class Damager : MonoBehaviour
     // Update is called once per frame
     void OnTriggerEnter(Collider collider)
     {
-        Debug.Log("entering");
+        //Debug.Log("entering");
         Health health = collider.GetComponentInParent<Health>();
         if (health != null)
         {
-            Debug.Log("found health");
+            //Debug.Log("found health");
             if (health.healthAlign != damageAlign)
             {
                 health.TakeDamage(this);

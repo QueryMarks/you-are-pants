@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 
 public class EnemyHealth : MonoBehaviour
 {
-    public int maxHealth = 3;
+    public int maxHealth;
 
     private int currentHealth;
 
@@ -13,10 +13,13 @@ public class EnemyHealth : MonoBehaviour
     private GameObject hpCon;
     private  RectTransform rect;
 
+    private Health stateHealth; 
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        currentHealth = maxHealth;
+
+        
 
         hpCon = new GameObject("Enemy HP");
         
