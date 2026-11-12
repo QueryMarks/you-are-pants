@@ -30,7 +30,6 @@ public class PlayerState : State
         }
         else
         {
-            PlayerHurt hurt = new PlayerHurt();
             player.health.TakeKnockback(damager);
             stateMachine.ChangeState(new PlayerHurt());
         }
