@@ -41,10 +41,10 @@ public class PlayerJab : PlayerAttack
             switch (sequence)
             {
                 case 0:
-                    player.playerRigid.linearVelocity = new Vector3(player.facing, 0, 0);
+                    player.playerRigid.linearVelocity = new Vector3(player.facing*5, 0, 0);
                     break;
                 case 1:
-                    player.playerRigid.linearVelocity = new Vector3(player.facing * 3, 0, 0);
+                    player.playerRigid.linearVelocity = new Vector3(player.facing * 2, 0, 0);
                     break;
                 case 2:
                     player.playerRigid.linearVelocity = new Vector3(player.facing * 5, 10, 0);
