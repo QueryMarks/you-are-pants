@@ -41,7 +41,8 @@ public class PlayerFall : PlayerState
         }
         else if (Input.GetKeyDown(KeyCode.Z))
         {
-            stateMachine.ChangeState(new PlayerJab());
+            player.gameObject.transform.localScale = new Vector3(player.facing, 1, 1);
+            stateMachine.ChangeState(new PlayerAirCombo());
         }
     }
     public override void Exit()
