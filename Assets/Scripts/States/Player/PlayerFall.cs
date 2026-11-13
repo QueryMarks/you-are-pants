@@ -5,7 +5,7 @@ public class PlayerFall : PlayerState
     public override void Enter()
     {
         base.Enter();
-        player.animator.SetTrigger("Idle");
+        player.animator.SetTrigger("Fall");
     }
 
     public override void FixedUpdate()
@@ -15,14 +15,16 @@ public class PlayerFall : PlayerState
         {
             player.Face(false);
         }
-        else
+        else if (Input.GetAxisRaw("Horizontal") > 0) 
         {
             player.Face(true);
         }
         if (player.IsGrounded() && player.playerRigid.linearVelocity.y <= 0)
         {
+
             player.Land();
             stateMachine.ChangeState(new PlayerIdle());
+            player.transform.localScale = new Vector3(player.facing, 0.5f, 1);
         }
         else
         {
@@ -39,7 +41,8 @@ public class PlayerFall : PlayerState
         }
         else if (Input.GetKeyDown(KeyCode.Z))
         {
-            stateMachine.ChangeState(new PlayerJab());
+            player.gameObject.transform.localScale = new Vector3(player.facing, 1, 1);
+            stateMachine.ChangeState(new PlayerAirCombo());
         }
     }
     public override void Exit()
