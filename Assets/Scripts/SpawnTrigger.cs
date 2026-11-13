@@ -35,6 +35,7 @@ public class SpawnTrigger : MonoBehaviour
             for (int i = 0; i < enemyCount; i++)
             {
                 Vector3 offset = Random.insideUnitSphere * 2f;
+                offset = new Vector3(offset.x, offset.y, 0);
 
                 Instantiate(
                     enemyPrefab,
