@@ -554,7 +554,6 @@ GameObject:
   - component: {fileID: 7952921073853464940}
   - component: {fileID: 3387547149748368901}
   - component: {fileID: 4196508834783242330}
-  - component: {fileID: 1004333928444295653}
   m_Layer: 3
   m_Name: The Player
   m_TagString: ThePlayer
@@ -709,26 +708,3 @@ MonoBehaviour:
   healthAlign: 0
   health: 50
   stunTimer: 0
---- !u!136 &1004333928444295653
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7360598014820479655}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1.3744648
-  m_Direction: 1
-  m_Center: {x: 0, y: -0.015602708, z: 0}
