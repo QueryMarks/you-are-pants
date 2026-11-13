@@ -29,7 +29,7 @@ public class LevelManager : MonoBehaviour
         {
             canWin = true;
         }
-        Debug.Log("Enemies to kill: " + maxEnemies);
+        //Debug.Log("Enemies to kill: " + maxEnemies);
     }
 
     public void OnTriggerEnter(Collider collision)
@@ -68,7 +68,7 @@ public class LevelManager : MonoBehaviour
 
     static public void giveEnemies(int inEnemies)
     {
-        Debug.Log("Got: " + inEnemies);
+        //Debug.Log("Got: " + inEnemies);
         maxEnemies += inEnemies;
     }
 }

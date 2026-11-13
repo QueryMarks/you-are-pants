@@ -13,7 +13,15 @@ public class PlayerHurt : PlayerState
         player.health.stunTimer -= 1;
         if (player.health.stunTimer <= 0)
         {
-            stateMachine.ChangeState(new PlayerIdle());
+            if (player.IsGrounded())
+            {
+                player.Land();
+                stateMachine.ChangeState(new PlayerIdle());
+            }
+            else
+            {
+                stateMachine.ChangeState(new PlayerFall());
+            }
         }
     }
 }

@@ -23,7 +23,16 @@ public class PlayerAttack: PlayerState
         }
         else if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
         {
-            stateMachine.ChangeState(new PlayerIdle());
+            if (player.IsGrounded())
+            {
+                player.Land();
+                stateMachine.ChangeState(new PlayerIdle());
+            }
+            else
+            {
+                stateMachine.ChangeState(new PlayerFall());
+            }
+            
         }
     }
 
