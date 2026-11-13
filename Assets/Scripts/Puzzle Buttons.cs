@@ -5,17 +5,25 @@ public class PuzzleButtons : MonoBehaviour
     [SerializeField] Vector2 rightSpot;
 
     [SerializeField] Vector3 respawnSpot = new Vector3(0,0,-1); //z = -1 means the button has no respawn spot! - Used because I cannot set Vector2 t NULL!
-    
-    bool state = false;     //Whether or not this puzzle box is standing in the correct state!
 
+    [SerializeField] float maxVelocity = 3f;
+    [SerializeField] float slowDownVelocity = 0.6f;
+    [SerializeField] float playerSpeedUpVelocity = 0.3f;
+    
     Collider col;
+    bool state = false;     //Whether or not this puzzle box is standing in the correct state!
 
     Rigidbody rb;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //col = gameObject.GetComponent<Collider>();
+        col = gameObject.GetComponent<Collider>();
+
+        if(col == null)
+        {
+            Debug.LogError("Failed to get Puzzle Cube's collider!");
+        }
 
         rb = GetComponent<Rigidbody>();
 
@@ -55,6 +63,25 @@ public class PuzzleButtons : MonoBehaviour
         }
     }
 
+    public void FixedUpdate()
+    {
+        float newX;
+
+        if(rb.linearVelocity.x >= maxVelocity)
+        {
+            //Debug.Log("Slowing on the right!");
+            newX = rb.linearVelocity.x - slowDownVelocity;
+            rb.linearVelocity = new Vector3(newX,rb.linearVelocity.y,rb.linearVelocity.z);
+        
+        }
+        else if(rb.linearVelocity.x  <= -1 * maxVelocity)
+        {
+            //Debug.Log("Slowing on the left!");
+            newX = rb.linearVelocity.x + slowDownVelocity;
+            rb.linearVelocity = new Vector3(newX,rb.linearVelocity.y,rb.linearVelocity.z);
+        }
+    }
+
     public bool GetButtonState()
     {
         return state;
@@ -62,6 +89,7 @@ public class PuzzleButtons : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
+       
         //Debug.Log("TOUCHING!");
 
         if(collision.gameObject.tag.Equals("Wall"))
@@ -86,6 +114,33 @@ public class PuzzleButtons : MonoBehaviour
             }
 
 
+        }
+        else 
+        {
+
+        }
+    }
+
+    public void OnCollisionStay(Collision collision)
+    {
+         float newX;
+
+        if(collision.gameObject.tag.Equals("ThePlayer"))
+        {
+            //Do stuff here to check where the player is and apply a speed up based on the edge of the box
+
+            if(collision.transform.position.x >= col.bounds.center.x)
+            {
+                //Debug.Log("Speeding up right!");
+                newX = rb.linearVelocity.x + playerSpeedUpVelocity;
+                rb.linearVelocity = new Vector3(newX,rb.linearVelocity.y,rb.linearVelocity.z);
+            }
+            else
+            {
+                //Debug.Log("Speedin up left!");
+                newX = rb.linearVelocity.x - playerSpeedUpVelocity;
+                rb.linearVelocity = new Vector3(newX,rb.linearVelocity.y,rb.linearVelocity.z);
+            }
         }
     }
 }
