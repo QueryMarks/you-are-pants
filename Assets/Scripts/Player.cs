@@ -120,7 +120,7 @@ public class Player : MonoBehaviour
     //-1 for face left,
     public void Face(bool faceRight)
     {
-        if (faceRight)
+        if (faceRight == true)
         {
             facing = 1;
             

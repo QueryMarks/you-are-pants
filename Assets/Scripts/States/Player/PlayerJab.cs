@@ -12,7 +12,7 @@ public class PlayerJab : PlayerAttack
             
             anim = "Slide";
             base.Enter();
-            player.gameObject.transform.localScale = new Vector3(player.facing * 1.5f, 0.5f, player.transform.localScale.z);
+            //player.gameObject.transform.localScale = new Vector3(player.facing * 1.5f, 0.5f, player.transform.localScale.z);
             player.playerRigid.linearVelocity = new Vector3(player.facing * 10, -2, 0);
             //prevent further follow ups
             sequence = 2;
@@ -70,6 +70,6 @@ public class PlayerJab : PlayerAttack
     public override void Exit()
     {
         base.Exit();
-        player.gameObject.transform.localScale = new Vector3(player.facing, 1, player.transform.localScale.y);
+        //player.gameObject.transform.localScale = new Vector3(player.facing, 1, player.transform.localScale.y);
     }
 }

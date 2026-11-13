@@ -5,7 +5,7 @@ public class PlayerFall : PlayerState
     public override void Enter()
     {
         base.Enter();
-        player.animator.SetTrigger("Idle");
+        player.animator.SetTrigger("Fall");
     }
 
     public override void FixedUpdate()
@@ -15,7 +15,7 @@ public class PlayerFall : PlayerState
         {
             player.Face(false);
         }
-        else
+        else if (Input.GetAxisRaw("Horizontal") > 0) 
         {
             player.Face(true);
         }
