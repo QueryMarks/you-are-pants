@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
         myObject = this.gameObject;
         animator = GetComponent<Animator>();
         health = GetComponent<Health>();
-        Debug.Log("welcome to my awesome player start");
+        //Debug.Log("welcome to my awesome player start");
         playerRigid = GetComponentInChildren<Rigidbody>();
 
         if(playerRigid == null)
@@ -46,6 +46,8 @@ public class Player : MonoBehaviour
         {
             stateMachine.StateInit(new PlayerIdle());
         }
+
+        UpdateUI();
     }
 
     // Update is called once per frame
@@ -53,13 +55,13 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("IT JUMPS IN THE NORMAL PLAYER WORLD");
+            //Debug.Log("IT JUMPS IN THE NORMAL PLAYER WORLD");
         }    
     }
 
     public void Die()
     {
-        Debug.Log("PLAYER SCRIPT! i have died");
+        //Debug.Log("PLAYER SCRIPT! i have died");
         SceneManager.LoadScene("ResultScene");
     }
 
@@ -102,7 +104,7 @@ public class Player : MonoBehaviour
             //Debug.Log("Jumping time. am i jumping?");
             if (Input.GetKey(KeyCode.Space))
             {
-                Debug.Log("I am jumping");
+                //Debug.Log("I am jumping");
                 return true;
             }
 
@@ -138,5 +140,10 @@ public class Player : MonoBehaviour
     {
         comboText.text = "Combo: " + combo.ToString();
         healthText.text = "Health: " + health.health.ToString();
+    }
+
+    public float GetHP()
+    {
+        return health.GetHealth();
     }
 }

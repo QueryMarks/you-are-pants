@@ -35,7 +35,7 @@ public class PlayerRun : PlayerState
     {
         if (player.JumpCheck() == true)
         {
-            Debug.Log("Switching to JUMP!!!!");
+            //Debug.Log("Switching to JUMP!!!!");
             stateMachine.ChangeState(new PlayerJump());
         }
         else if (Input.GetKeyDown(KeyCode.Z))
