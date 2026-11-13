@@ -48,6 +48,8 @@ public class Player : MonoBehaviour
         {
             stateMachine.StateInit(new PlayerIdle());
         }
+
+        UpdateUI();
     }
 
     // Update is called once per frame
@@ -61,7 +63,7 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
-        Debug.Log("PLAYER SCRIPT! i have died");
+        //Debug.Log("PLAYER SCRIPT! i have died");
         SceneManager.LoadScene("ResultScene");
     }
 
@@ -147,5 +149,9 @@ public class Player : MonoBehaviour
     public void Land()
     {
         canDoubleJump = true;
+    }
+    public float GetHP()
+    {
+        return health.GetHealth();
     }
 }
