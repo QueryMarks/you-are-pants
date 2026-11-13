@@ -21,8 +21,10 @@ public class PlayerFall : PlayerState
         }
         if (player.IsGrounded() && player.playerRigid.linearVelocity.y <= 0)
         {
+
             player.Land();
             stateMachine.ChangeState(new PlayerIdle());
+            player.transform.localScale = new Vector3(player.facing, 0.5f, 1);
         }
         else
         {

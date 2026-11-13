@@ -130,7 +130,7 @@ public class Player : MonoBehaviour
 
             facing = -1;
         }
-        myObject.transform.localScale = new Vector3(facing, 1, 1);
+        myObject.transform.localScale = new Vector3(facing, myObject.transform.localScale.y, 1);
     }
 
     public void UpdateCombo(int amount)

@@ -8,7 +8,7 @@ public class PlayerRun : PlayerState
 
         if (player.transform.localScale.y != 1)
         {
-            float rescale = Mathf.Lerp(player.transform.localScale.y, 1f, 0.001f);
+            float rescale = Mathf.Lerp(player.transform.localScale.y, 1f, 0.05f);
             player.transform.localScale = new Vector3(player.facing, rescale, 1);
         }
         if (!player.IsGrounded())
