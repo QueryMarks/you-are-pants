@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
         myObject = this.gameObject;
         animator = GetComponent<Animator>();
         health = GetComponent<Health>();
-        Debug.Log("welcome to my awesome player start");
+        //Debug.Log("welcome to my awesome player start");
         playerRigid = GetComponentInChildren<Rigidbody>();
 
         if(playerRigid == null)
@@ -53,7 +53,7 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("IT JUMPS IN THE NORMAL PLAYER WORLD");
+            //Debug.Log("IT JUMPS IN THE NORMAL PLAYER WORLD");
         }    
     }
 
@@ -102,7 +102,7 @@ public class Player : MonoBehaviour
             //Debug.Log("Jumping time. am i jumping?");
             if (Input.GetKey(KeyCode.Space))
             {
-                Debug.Log("I am jumping");
+                //Debug.Log("I am jumping");
                 return true;
             }
 

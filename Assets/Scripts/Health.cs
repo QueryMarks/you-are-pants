@@ -8,6 +8,11 @@ public class Health : MonoBehaviour
     public int stunTimer = 0;
     Player player;
 
+    void Start()
+    {
+        stateMachine = GetComponent<StateMachine>();
+    }
+
     public void TakeDamage (Damager damager)
     {
         //Debug.Log("TAKING DAMAGE!");

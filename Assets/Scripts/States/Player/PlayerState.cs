@@ -18,6 +18,7 @@ public class PlayerState : State
     public override void TakeDamage(Damager damager)
     {
         //player's reaction to damage
+        Debug.Log("I have taken damage i'm the playerer");
         bool survivedDamage = player.health.LoseHealth(damager.damage);
         player.UpdateCombo(0);
         //player.UpdateUI();
