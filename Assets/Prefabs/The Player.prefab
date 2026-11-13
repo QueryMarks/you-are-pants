@@ -129,7 +129,7 @@ MonoBehaviour:
   damageAlign: 0
   damage: 10
   hitstun: 30
-  knockback: {x: 2, y: 2, z: 0}
+  knockback: {x: 10, y: 2, z: 0}
 --- !u!1 &389874609094232337
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,7 +257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Damager
   owner: {fileID: 7360598014820479655}
   damageAlign: 0
-  damage: 15
+  damage: 10
   hitstun: 120
   knockback: {x: 6, y: 8, z: 0}
 --- !u!1 &1855064538644922550
@@ -387,9 +387,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Damager
   owner: {fileID: 7360598014820479655}
   damageAlign: 0
-  damage: 10
+  damage: 4
   hitstun: 30
-  knockback: {x: 3, y: 6, z: 0}
+  knockback: {x: 2, y: 2, z: 0}
 --- !u!1 &2022758127470585433
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,9 +517,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Damager
   owner: {fileID: 7360598014820479655}
   damageAlign: 0
-  damage: 10
+  damage: 5
   hitstun: 30
-  knockback: {x: 3, y: 6, z: 0}
+  knockback: {x: 1, y: 0.2, z: 0}
 --- !u!1 &2257636267807331665
 GameObject:
   m_ObjectHideFlags: 0
@@ -816,7 +816,7 @@ MonoBehaviour:
   owner: {fileID: 7360598014820479655}
   damageAlign: 0
   damage: 10
-  hitstun: 30
+  hitstun: 100
   knockback: {x: 3, y: 6, z: 0}
 --- !u!1 &6450060421790800775
 GameObject:
@@ -1060,9 +1060,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Damager
   owner: {fileID: 7360598014820479655}
   damageAlign: 0
-  damage: 10
-  hitstun: 30
-  knockback: {x: 3, y: 6, z: 0}
+  damage: 5
+  hitstun: 40
+  knockback: {x: 0.5, y: 2, z: 0}
 --- !u!1 &7360598014820479655
 GameObject:
   m_ObjectHideFlags: 0
