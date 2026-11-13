@@ -66,6 +66,7 @@ public class PlayerWallBlocker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        PuzzleButtons pb;
         switch(pt)
         {
             case PuzzleType.PT_KILL_NUM_ENEMIES:
@@ -84,9 +85,10 @@ public class PlayerWallBlocker : MonoBehaviour
                 {
                     if(obj != null)
                     {
-                        if(obj.GetComponent<PuzzleButtons>())
+                        pb = obj.GetComponent<PuzzleButtons>();
+                        if(pb != null)
                         {
-                            if(obj.GetComponent<PuzzleButtons>().GetButtonState() == true)
+                            if(pb.GetButtonState() == true)
                             {
                                 numBoxesTrue++;
                             }
@@ -157,15 +159,5 @@ public class PlayerWallBlocker : MonoBehaviour
                
                 break;
         }
-    }
-
-    void setIsDead(bool inStatus)
-    {
-        isDead = inStatus;
-    }
-
-    bool getIsDead()
-    {
-        return isDead;
     }
 }
