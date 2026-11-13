@@ -8,6 +8,7 @@ public class SwarmAttack : SwarmState
     {
         base.Enter();
         swarm.hitbox.SetActive(true);
+        swarm.animator.SetTrigger("Attack");
         enemy.enemyRigid.linearVelocity = Vector3.Normalize(enemy.player.transform.position - enemy.transform.position) * swarm.attackSpeed;
     }
     public override void FixedUpdate()
@@ -20,6 +21,7 @@ public class SwarmAttack : SwarmState
     }
     public override void Exit()
     {
+        swarm.animator.SetTrigger("Idle");
         swarm.hitbox.SetActive(false);
     }
 

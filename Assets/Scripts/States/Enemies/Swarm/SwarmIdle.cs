@@ -11,9 +11,7 @@ public class SwarmIdle : SwarmState
     }
     public override void FixedUpdate()
     {
-        float dist = Mathf.Abs(Vector3.Distance(
-            enemy.gameObject.transform.position,
-            enemy.player.transform.position));
+        float dist = Mathf.Abs(enemy.gameObject.transform.position.x - enemy.player.gameObject.transform.position.x);
         //Debug.Log(dist);
         if (dist <= swarm.chaseDistance)
         {
