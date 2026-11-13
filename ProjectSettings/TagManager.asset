@@ -8,6 +8,7 @@ TagManager:
   - Attack
   - Enemy
   - Wall
+  - LevelManager
   layers:
   - Default
   - TransparentFX

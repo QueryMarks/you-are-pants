@@ -1,3 +1,5 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,11 +12,11 @@ public class LevelManager : MonoBehaviour
     static public int maxEnemies;
     static private int deadEnemies = 0;
 
-    
+    private String nextLevel = null;
 
     public void Awake()
     {
-        
+            
     }
 
     public void Start()
@@ -29,19 +31,15 @@ public class LevelManager : MonoBehaviour
         {
             canWin = true;
         }
+
+        if(canWin == true)
+        {
+            Load();
+        }
         //Debug.Log("Enemies to kill: " + maxEnemies);
     }
 
-    public void OnTriggerEnter(Collider collision)
-    {
-        if(canWin == true)
-        {
-            //Load(); //Is there a reason Peter is using Invoke? Why the delay? - ME
-            Invoke(nameof(Load), loadDelay);
-        }
-        
 
-    }
     public void LoadNextLevel()
     {
         Invoke(nameof(Load), loadDelay);
@@ -52,8 +50,8 @@ public class LevelManager : MonoBehaviour
         //why on earth were we doing the below? -Ethelyn
         //Time.timeScale = 0.5f;
 
-        //SceneManager.LoadScene("ResultScene");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("ResultScene");
+        //SceneManager.LoadScene("");
     }
 
     static public void updateDead()
@@ -70,5 +68,15 @@ public class LevelManager : MonoBehaviour
     {
         //Debug.Log("Got: " + inEnemies);
         maxEnemies += inEnemies;
+    }
+
+    public void changeLevel(String inLevel)
+    {
+        nextLevel = inLevel;
+    }
+
+    public void TellLevelCanWin()
+    {
+        canWin = true;
     }
 }
