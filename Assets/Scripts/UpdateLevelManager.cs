@@ -24,10 +24,10 @@ public class UpdateLevelManager : MonoBehaviour
     public void OnTriggerEnter(Collider toucher)
     {
         
-        if(toucher.tag == "ThePlayer")
+        if(toucher.tag == "ThePlayer" && levelManager.getLevelCanWin() == true)
         {
            
-            levelManager.TellLevelCanWin();
+            levelManager.LoadNextLevel();
         }
     }
 }

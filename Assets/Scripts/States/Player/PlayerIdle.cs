@@ -12,10 +12,10 @@ public class PlayerIdle : PlayerState
     {
         if (player.transform.localScale.y != 1)
         {
-            Debug.Log("Lerping scale of " + player.transform.localScale.y);
+            //Debug.Log("Lerping scale of " + player.transform.localScale.y);
             float rescale = Mathf.Lerp(player.transform.localScale.y, 1f, 0.05f);
             player.transform.localScale = new Vector3(player.facing, rescale, 1);
-            Debug.Log("Lerped scale is " + player.transform.localScale.y);
+            //Debug.Log("Lerped scale is " + player.transform.localScale.y);
         }
         if (!player.IsGrounded())
         {
