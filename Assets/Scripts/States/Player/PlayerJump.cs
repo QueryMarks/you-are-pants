@@ -22,11 +22,16 @@ public class PlayerJump : PlayerState
         {
             player.Face(true);
         }
+        float stretch = playerRigid.linearVelocity.y;
+        stretch = Mathf.Clamp(stretch, -15, 0);
+        player.gameObject.transform.localScale = new Vector3(player.facing, -stretch * 0.05f + 1f, 1);
         if (player.IsGrounded() && player.playerRigid.linearVelocity.y <= 0)
         {
             player.Land();
             stateMachine.ChangeState(new PlayerIdle());
+            player.transform.localScale = new Vector3(player.facing, 0.5f, 1);
         }
+
     }
 
     public override void Update()
@@ -41,5 +46,10 @@ public class PlayerJump : PlayerState
         {
             stateMachine.ChangeState(new PlayerJab());
         }
+    }
+    public override void Exit()
+    {
+        base.Exit();
+        //player.gameObject.transform.localScale = new Vector3(player.facing, 1, 1);
     }
 }

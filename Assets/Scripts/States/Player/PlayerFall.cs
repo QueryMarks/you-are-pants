@@ -24,6 +24,10 @@ public class PlayerFall : PlayerState
             player.Land();
             stateMachine.ChangeState(new PlayerIdle());
         }
+        else
+        {
+            player.gameObject.transform.localScale = new Vector3(player.facing, Mathf.Abs(playerRigid.linearVelocity.y) * 0.05f + 1f, 1);
+        }
     }
 
     public override void Update()
@@ -37,5 +41,10 @@ public class PlayerFall : PlayerState
         {
             stateMachine.ChangeState(new PlayerJab());
         }
+    }
+    public override void Exit()
+    {
+        base.Exit();
+        //player.gameObject.transform.localScale = new Vector3(player.facing, 1, 1);
     }
 }
