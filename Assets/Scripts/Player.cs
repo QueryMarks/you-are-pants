@@ -21,6 +21,8 @@ public class Player : MonoBehaviour
     public int facing = 1;
 
     public int combo = 0;
+
+    public bool canDoubleJump = true;
     [SerializeField] TextMeshProUGUI comboText;
     [SerializeField] TextMeshProUGUI healthText;
     
@@ -96,18 +98,19 @@ public class Player : MonoBehaviour
 
     public bool JumpCheck()
     {
-        if (IsGrounded() == true)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            //Allow jump
-            //Debug.Log("Jumping time. am i jumping?");
-            if (Input.GetKey(KeyCode.Space))
-            {
-                //Debug.Log("I am jumping");
-                return true;
-            }
-
-            
+            if (IsGrounded() == true)
+                {
+                    return true;
+                }
+                else if (canDoubleJump)
+                {
+                    canDoubleJump = false;
+                    return true;
+                }
             return false;
+                
         }
         else return false;
     }
@@ -138,5 +141,11 @@ public class Player : MonoBehaviour
     {
         comboText.text = "Combo: " + combo.ToString();
         healthText.text = "Health: " + health.health.ToString();
+    }
+
+    //Default behavior for landing, such as resetting air action variables. -Ethelyn
+    public void Land()
+    {
+        canDoubleJump = true;
     }
 }
