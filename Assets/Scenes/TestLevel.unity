@@ -1745,7 +1745,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe34932b002bd174a9a845f4e5a01a4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerWallBlocker
+  pt: 0
   numToDie: 1
+  buttons: []
 --- !u!4 &1844522034 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5080349525400464227, guid: 8c77c77d1b192bb4c882b01fe2754917, type: 3}

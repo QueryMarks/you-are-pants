@@ -40,6 +40,7 @@ public class EnemyHealth : MonoBehaviour
         rect.sizeDelta = new Vector2(300, 100);
         rect.anchoredPosition = Vector2.zero;
 
+        Camera.main.WorldToScreenPoint(transform.position + new Vector3(0, 1.5f, 0));
         
 
     }
