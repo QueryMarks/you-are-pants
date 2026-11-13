@@ -25,7 +25,7 @@ public class PitTeleport : MonoBehaviour
                 Debug.LogError("Pit returns the player to 0,0,0\nMake sure this is intended behavior!");
             }
             
-            other.transform.position = returnPosition;
+            other.transform.parent.transform.position = returnPosition;
             
             rb = other.GetComponent<Rigidbody>();
 
