@@ -30,6 +30,6 @@ public class ResultManager : MonoBehaviour
     public void Retry()
     {
         //Time.timeScale = 0.5f;
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("StartScene");
     }
 }
