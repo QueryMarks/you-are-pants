@@ -36,7 +36,7 @@ public class PitTeleport : MonoBehaviour
         }
         else
         {
-            Destroy(other);
+            //Destroy(other);
         }
         
     }
