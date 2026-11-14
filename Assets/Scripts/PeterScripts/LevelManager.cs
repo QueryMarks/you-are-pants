@@ -31,11 +31,6 @@ public class LevelManager : MonoBehaviour
         {
             canWin = true;
         }
-
-        if(canWin == true)
-        {
-            Load();
-        }
         //Debug.Log("Enemies to kill: " + maxEnemies);
     }
 
@@ -78,5 +73,10 @@ public class LevelManager : MonoBehaviour
     public void TellLevelCanWin()
     {
         canWin = true;
+    }
+
+    public bool getLevelCanWin()
+    {
+        return canWin;
     }
 }

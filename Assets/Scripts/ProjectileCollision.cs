@@ -26,7 +26,7 @@ public class ProjectileCollision : MonoBehaviour
         if (hasHit)
             return;
 
-        Debug.Log("Projectile contacted: " + other.name);
+        //Debug.Log("Projectile contacted: " + other.name);
 
         Health health = other.GetComponentInParent<Health>();
 
@@ -36,7 +36,7 @@ public class ProjectileCollision : MonoBehaviour
             {
                 hasHit = true;
 
-                Debug.Log("PLAYER HIT!");
+                //Debug.Log("PLAYER HIT!");
 
                 health.TakeDamage(damager);
 
