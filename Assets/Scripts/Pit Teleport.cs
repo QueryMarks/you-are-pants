@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PitTeleport : MonoBehaviour
 {
-    [SerializeField] Vector3 returnPosition =  Vector3.zero;
+    [SerializeField] Vector3 returnPosition =  Vector3.zero;    //I am treating Vector3.zero as null, hence the debug error log! - ME
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
