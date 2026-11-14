@@ -1,0 +1,4 @@
+Our Gold Spike Mechanic was combos.
+
+We have expanded our combo system with a new attack and are working to allow each attack to be integrated amongst each other.
+Currently, attacks chain into each other granting the player reach, invul frames, and mobility.
