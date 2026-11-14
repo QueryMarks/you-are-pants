@@ -41,6 +41,10 @@ public class StateMachine : MonoBehaviour
     {
         //Debug.Log("Updating current state.");
         currentState.Update();
+        if (currentState is DeadState)
+        {
+            Debug.Log("Dead state reached.");
+        }
     }
     void FixedUpdate()
     {
