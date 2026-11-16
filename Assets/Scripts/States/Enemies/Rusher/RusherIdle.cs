@@ -15,12 +15,11 @@ public class RusherIdle : RusherState
         //Debug.Log(dist);
         if (dist <= rush.chaseDistance)
         {
-            //Debug.Log("CHASE THE PLAYER DOWN!!!!!!");
             stateMachine.ChangeState(new RushChase());
         }
         else
         {
-            enemy.enemyRigid.linearVelocity = new Vector3(0, Mathf.Sin(Time.fixedTime), 0);
+            enemy.enemyRigid.linearVelocity = new Vector3(Mathf.Sin(Time.fixedTime), 0, 0);
         }
 
         

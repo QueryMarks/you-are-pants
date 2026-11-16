@@ -23,7 +23,7 @@ public class RusherState : EnemyState
     {
         if (!myObject.GetComponent<Health>().LoseHealth(damager.damage))
         {
-            Debug.Log("I AM A RUSHER ENEMY, AND I HAVE DIED.");
+            //Debug.Log("I AM A RUSHER ENEMY, AND I HAVE DIED.");
             //enemy.Die();
             enemy.health.BasicDie();
         }
