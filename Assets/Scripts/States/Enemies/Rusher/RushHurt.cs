@@ -1,0 +1,28 @@
+﻿using UnityEngine;
+
+public class RushHurt : RusherState
+{
+
+    // Use this for initialization
+    public override void Enter()
+    {
+        base.Enter();
+        Debug.Log("i am rusher and i am so hurt and in pain");
+        enemy.enemyRigid.useGravity = true;
+    }
+    public override void FixedUpdate()
+    {
+        enemy.health.stunTimer -= 1;
+        if (enemy.health.stunTimer <= 0)
+        {
+            stateMachine.ChangeState(new RusherIdle());
+        }
+
+        
+    }
+    public override void Exit()
+    {
+        enemy.enemyRigid.useGravity = false;
+    }
+
+}

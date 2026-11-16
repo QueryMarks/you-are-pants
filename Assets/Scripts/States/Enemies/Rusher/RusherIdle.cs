@@ -1,0 +1,28 @@
+using UnityEngine;
+using System.Collections;
+
+public class RusherIdle : RusherState
+{
+
+    public override void Enter()
+    {
+        base.Enter();
+        
+    }
+    public override void FixedUpdate()
+    {
+        float dist = Mathf.Abs(enemy.gameObject.transform.position.x - enemy.player.gameObject.transform.position.x);
+        //Debug.Log(dist);
+        if (dist <= rush.chaseDistance)
+        {
+            //Debug.Log("CHASE THE PLAYER DOWN!!!!!!");
+            stateMachine.ChangeState(new RushChase());
+        }
+        else
+        {
+            enemy.enemyRigid.linearVelocity = new Vector3(0, Mathf.Sin(Time.fixedTime), 0);
+        }
+
+        
+    }
+}
