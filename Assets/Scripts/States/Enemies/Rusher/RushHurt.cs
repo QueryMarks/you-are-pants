@@ -7,7 +7,7 @@ public class RushHurt : RusherState
     public override void Enter()
     {
         base.Enter();
-        Debug.Log("i am rusher and i am so hurt and in pain");
+        //Debug.Log("i am rusher and i am so hurt and in pain");
         enemy.enemyRigid.useGravity = true;
     }
     public override void FixedUpdate()
@@ -22,7 +22,7 @@ public class RushHurt : RusherState
     }
     public override void Exit()
     {
-        enemy.enemyRigid.useGravity = false;
+        //enemy.enemyRigid.useGravity = false;
     }
 
 }
