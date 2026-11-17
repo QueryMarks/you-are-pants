@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UIElements;
-public class SwarmChase : SwarmState
+public class ShooterChase : ShooterState
 {
     int timer = 0;
 
@@ -25,7 +25,7 @@ public class SwarmChase : SwarmState
 
         if (Mathf.Abs(enemy.gameObject.transform.position.x - enemy.player.gameObject.transform.position.x) > swarm.chaseDistance)
         {
-            stateMachine.ChangeState(new SwarmIdle());
+            stateMachine.ChangeState(new ShooterIdle());
         }
         else if (Mathf.Abs(enemy.gameObject.transform.position.x - enemy.player.gameObject.transform.position.x) <= swarm.attackDistance)
         {
@@ -37,7 +37,7 @@ public class SwarmChase : SwarmState
                 timer += 1;
                 if (timer >= 120)
                 {
-                    stateMachine.ChangeState(new SwarmAttack());
+                    stateMachine.ChangeState(new ShooterAttack());
                 }
             }
             else
