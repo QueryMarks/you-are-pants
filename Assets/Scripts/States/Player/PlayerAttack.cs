@@ -9,6 +9,8 @@ public class PlayerAttack: PlayerState
         base.Enter();
         animator = player.GetComponent<Animator>();
         animator.SetTrigger(anim);
+        Debug.Log("Playing sound: " + anim);
+        SoundEffectManager.Play(anim);
     }
     public override void Exit()
     {
@@ -20,6 +22,7 @@ public class PlayerAttack: PlayerState
         if (Input.GetKeyDown(KeyCode.Z) && player.cancelCheck)
         {
             AttackCancel();
+
         }
         else if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
         {

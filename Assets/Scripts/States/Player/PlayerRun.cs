@@ -2,6 +2,7 @@
 using UnityEngine;
 public class PlayerRun : PlayerState
 {
+    private float soundTimer = 0f;
     public override void Enter()
     {
         base.Enter();
@@ -25,12 +26,21 @@ public class PlayerRun : PlayerState
         
         if (Input.GetAxisRaw("Horizontal") == 0)
         {
+            SoundEffectManager.Stop();
+            soundTimer = 0f;
             playerRigid.linearVelocity = new Vector3(0, playerRigid.linearVelocity.y, 0);
             stateMachine.ChangeState(new PlayerIdle());
         }
         else
         {
             player.DefaultMove();
+            soundTimer -= Time.fixedDeltaTime;
+            if (soundTimer <= 0)
+            {
+                SoundEffectManager.Play("Run");
+                soundTimer = 0.3f;
+            }
+
             if (Input.GetAxisRaw("Horizontal") < 0)
             {
                 player.Face(false);

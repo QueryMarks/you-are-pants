@@ -57,8 +57,9 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
+
             //Debug.Log("IT JUMPS IN THE NORMAL PLAYER WORLD");
-        }    
+        }
     }
 
     public void Die()
@@ -104,11 +105,14 @@ public class Player : MonoBehaviour
         {
             if (IsGrounded() == true)
                 {
+                    SoundEffectManager.Play("Jump");
                     return true;
+
                 }
                 else if (canDoubleJump)
                 {
                     canDoubleJump = false;
+                    SoundEffectManager.Play("Jump");
                     return true;
                 }
             return false;
