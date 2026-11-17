@@ -9,6 +9,7 @@ public class SwarmAttack : SwarmState
         base.Enter();
         swarm.hitbox.SetActive(true);
         swarm.animator.SetTrigger("Attack");
+        SoundEffectManager.Play("Jab");
         enemy.enemyRigid.linearVelocity = Vector3.Normalize(enemy.player.transform.position - enemy.transform.position) * swarm.attackSpeed;
     }
     public override void FixedUpdate()
