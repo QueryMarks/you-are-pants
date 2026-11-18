@@ -35,6 +35,7 @@ public class ProjectileCollision : MonoBehaviour
             if (health.healthAlign == DMG_ALIGN.PLAYERDMG)
             {
                 hasHit = true;
+                SoundEffectManager.Play("ProjectileHit");
 
                 //Debug.Log("PLAYER HIT!");
 
