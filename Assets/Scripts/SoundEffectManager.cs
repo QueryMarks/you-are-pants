@@ -5,6 +5,8 @@ public class SoundEffectManager : MonoBehaviour
 {
     private static SoundEffectManager Instance;
     private static AudioSource audioSource;
+    private static AudioSource runAudioSource;
+
     private static SoundEffectLibrary soundEffectLibrary;
     [SerializeField] private Slider sfxSlider;
     private void Awake()
@@ -13,6 +15,7 @@ public class SoundEffectManager : MonoBehaviour
         {
             Instance = this;
             audioSource = GetComponent<AudioSource>();
+            runAudioSource = gameObject.AddComponent<AudioSource>();
             soundEffectLibrary = GetComponent<SoundEffectLibrary>();
             DontDestroyOnLoad(gameObject);
         }
@@ -44,5 +47,22 @@ public class SoundEffectManager : MonoBehaviour
     public static void Stop()
     {
         audioSource.Stop();
+    }
+    public static void PlayRun()
+    {
+        if (!runAudioSource.isPlaying)
+        {
+            AudioClip audioClip = soundEffectLibrary.GetRandomClip("Run");
+
+            if (audioClip != null)
+            {
+                runAudioSource.PlayOneShot(audioClip);
+            }
+        }
+    }
+
+    public static void StopRun()
+    {
+        runAudioSource.Stop();
     }
 }

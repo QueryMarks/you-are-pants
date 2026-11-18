@@ -2,7 +2,9 @@
 using UnityEngine;
 public class PlayerRun : PlayerState
 {
-    private float soundTimer = 0f;
+    private bool playingFootsteps = false;
+    public float footstepSpeed = 0.5f;
+    private Coroutine footstepCoroutine;
     public override void Enter()
     {
         base.Enter();
@@ -19,28 +21,24 @@ public class PlayerRun : PlayerState
         }
         if (!player.IsGrounded())
         {
+            StopFootsteps();
             stateMachine.ChangeState(new PlayerFall());
+            return;
         }
         Vector3 newVelocity = playerRigid.linearVelocity;
 
         
         if (Input.GetAxisRaw("Horizontal") == 0)
         {
-            SoundEffectManager.Stop();
-            soundTimer = 0f;
+            StopFootsteps();
             playerRigid.linearVelocity = new Vector3(0, playerRigid.linearVelocity.y, 0);
             stateMachine.ChangeState(new PlayerIdle());
         }
         else
         {
             player.DefaultMove();
-            soundTimer -= Time.fixedDeltaTime;
-            if (soundTimer <= 0)
-            {
-                SoundEffectManager.Play("Run");
-                soundTimer = 0.3f;
-            }
 
+            StartFootsteps();
             if (Input.GetAxisRaw("Horizontal") < 0)
             {
                 player.Face(false);
@@ -52,15 +50,45 @@ public class PlayerRun : PlayerState
         }    
             
     }
+    void StartFootsteps()
+    {
+        if (!playingFootsteps)
+        {
+            playingFootsteps = true;
+            footstepCoroutine = player.StartCoroutine(PlayFootsteps());
+        }
+    }
+
+    void StopFootsteps()
+    {
+        if (playingFootsteps)
+        {
+            playingFootsteps = false;
+            player.StopCoroutine(footstepCoroutine);
+            footstepCoroutine = null;
+        }
+        SoundEffectManager.StopRun();
+    }
+
+    IEnumerator PlayFootsteps()
+    {
+        while (true)
+        {
+            SoundEffectManager.PlayRun();
+            yield return new WaitForSeconds(footstepSpeed);
+        }
+    }
     public override void Update()
     {
         if (player.JumpCheck() == true)
         {
+            StopFootsteps();
             //Debug.Log("Switching to JUMP!!!!");
             stateMachine.ChangeState(new PlayerJump());
         }
         else if (Input.GetKeyDown(KeyCode.Z))
         {
+            StopFootsteps();
             stateMachine.ChangeState(new PlayerJab());
         }
     }
