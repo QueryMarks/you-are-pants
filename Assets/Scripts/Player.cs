@@ -66,6 +66,8 @@ public class Player : MonoBehaviour
     {
         //Debug.Log("PLAYER SCRIPT! i have died");
         SceneManager.LoadScene("ResultScene");
+        MusicManager.PauseBackgroundMusic();
+
     }
 
     public bool IsGrounded()
