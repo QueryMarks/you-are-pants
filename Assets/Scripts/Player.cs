@@ -23,8 +23,8 @@ public class Player : MonoBehaviour
     public int combo = 0;
 
     public bool canDoubleJump = true;
-    [SerializeField] TextMeshProUGUI comboText;
-    [SerializeField] TextMeshProUGUI healthText;
+    [SerializeField] TextMeshProUGUI comboText = null;
+    [SerializeField] TextMeshProUGUI healthText = null;
     
 
 
@@ -48,6 +48,13 @@ public class Player : MonoBehaviour
         {
             stateMachine.StateInit(new PlayerIdle());
         }
+
+        if(comboText == null)
+        {
+            Debug.LogError("ComboText is null!");
+        }
+
+        
 
         UpdateUI();
     }
