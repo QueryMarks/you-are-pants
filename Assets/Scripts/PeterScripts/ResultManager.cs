@@ -31,5 +31,7 @@ public class ResultManager : MonoBehaviour
     {
         //Time.timeScale = 0.5f;
         SceneManager.LoadScene("StartScene");
+        MusicManager.PlayBackgroundMusic(true);
+
     }
 }

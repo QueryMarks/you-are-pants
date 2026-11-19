@@ -46,6 +46,7 @@ public class LevelManager : MonoBehaviour
         //Time.timeScale = 0.5f;
 
         SceneManager.LoadScene("ResultScene");
+        MusicManager.PauseBackgroundMusic();
         //SceneManager.LoadScene("");
     }
 

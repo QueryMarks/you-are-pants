@@ -3,3 +3,15 @@ https://3dwarehouse.sketchup.com/model/f4c6fe9e-23d4-45f2-975e-23b17e8b6cfe/t-sh
 
 Font:
 https://www.fontspace.com/player-2-font-f171900
+Audios Used:
+Jumping, wearing pants, barefoot, wood floor, no landing sound by wareya -- https://freesound.org/s/449949/ -- License: Creative Commons 0
+cloth_rip.mp3 by Johnny2810 -- https://freesound.org/s/507756/ -- License: Creative Commons 0
+Fast whoosh, bamboo swoosh through air, version 2 by zapsplat.com -- https://freesound.org/s/719637/ -- License: Creative Commons 0
+Fast whoosh, bamboo swoosh through air, version 1 by zapsplat.com -- https://freesound.org/s/719636/ -- License: Creative Commons 0
+Plane Run.wav by Augdog -- https://freesound.org/s/210215/ -- License: Attribution 4.0
+Clothes Rustling 1 by WasabiWielder -- https://freesound.org/s/334219/ -- License: Creative Commons 0
+Footsteps:
+https://dryoma.itch.io/footsteps-sounds
+Background Music:
+https://pixabay.com/music/video-games-game-636273/
+Made custom SFX on: https://www.bfxr.net/

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Unity.VisualScripting;
+using UnityEngine;
 
 public class EnemyState : State
 {
@@ -26,4 +27,5 @@ public class EnemyState : State
         //if this state should be stunnable, include logic here, such as
         //stateMachine.ChangeState(new EnemyHurt());
     }
+
 }

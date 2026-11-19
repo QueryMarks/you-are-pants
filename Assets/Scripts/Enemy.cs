@@ -102,4 +102,5 @@ public abstract class Enemy : MonoBehaviour
         Destroy(hpCon);//.SetActive(false);
         Destroy(gameObject);//.SetActive(false);
     }
+
 }

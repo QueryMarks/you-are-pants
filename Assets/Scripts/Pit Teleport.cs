@@ -17,7 +17,11 @@ public class PitTeleport : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
+        Enemy es;
         Rigidbody rb;
+
+        //Debug.Log("AFSHASDJANSF");
+
         if(other.tag == "ThePlayer")
         {
             if(returnPosition == Vector3.zero)
@@ -36,7 +40,19 @@ public class PitTeleport : MonoBehaviour
         }
         else
         {
-            Destroy(other);
+            es = other.GetComponentInParent<Enemy>();
+            if(es != null)
+            {
+                //Debug.LogError("An enemy has fallen in to the pit!");
+                es.Die();
+
+            }
+            else
+            {
+                Debug.Log("Something that is neither a player nor an enemy has fallen out of bounds!\nThey have been destroyed!");
+                Destroy(other.gameObject);
+            }
+            //Destroy(other);
         }
         
     }

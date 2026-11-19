@@ -1,6 +1,7 @@
-using UnityEditor.PackageManager;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class PlayerWallBlocker : MonoBehaviour
 {
@@ -20,6 +21,13 @@ public class PlayerWallBlocker : MonoBehaviour
 
     private int numBoxesTrue = 0;
     private int maxNumBoxesTrue = 0;
+
+    [SerializeField] bool deathCube = false;
+
+    [SerializeField] GameObject deathCubeObject = null;
+    [SerializeField] Vector3 deathCubeSpot = new Vector3(0,0,0); 
+
+    //[SerializeField] String deathCubeText = null;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -138,6 +146,7 @@ public class PlayerWallBlocker : MonoBehaviour
     
     private void CleanUp()
     {
+        GameObject cube;
         switch(pt)
         {
             case PuzzleType.PT_PUZZLE_BOX:
@@ -151,6 +160,25 @@ public class PlayerWallBlocker : MonoBehaviour
                     Destroy(obj);
                 }
 
+                if(deathCube == true)
+                {
+                    //Spawn Death Cube here to prevent any potential Soft locking!
+                    if(deathCubeObject != null)
+                    {
+                        cube = Instantiate(deathCubeObject,deathCubeSpot,Quaternion.identity);
+
+                        if(cube != null)
+                        {
+                            //Debug.Log(deathCubeText);
+                            //cube.GetComponent<Signs>().setText(deathCubeText);
+                        }
+                        
+                    }
+                    else
+                    {
+                        Debug.LogError("Death Cube GameObject is not set!");
+                    }
+                }
                 Destroy(gameObject);
                 break;
 
