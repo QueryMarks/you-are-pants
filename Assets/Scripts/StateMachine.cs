@@ -30,11 +30,14 @@ public class StateMachine : MonoBehaviour
         currentState.myObject = myObject;
         currentState.stateMachine = this;
         currentState.Enter();
+
     }
-    
+
     public void TakeDamage(Damager damage)
     {
         currentState.TakeDamage(damage);
+        SoundEffectManager.Play("PlayerHurt");
+
     }
     // Update is called once per frame
     void Update()
