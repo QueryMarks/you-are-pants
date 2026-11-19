@@ -16,7 +16,7 @@ public class ShooterAttack : ShooterState
         timer += 1;
         if (timer >= 45)
         {
-            stateMachine.ChangeState(new SwarmIdle());
+            stateMachine.ChangeState(new ShooterIdle());
         }
     }
     public override void Exit()

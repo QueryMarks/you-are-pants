@@ -16,7 +16,7 @@ public class ShooterIdle : ShooterState
         if (dist <= swarm.chaseDistance)
         {
             //Debug.Log("CHASE THE PLAYER DOWN!!!!!!");
-            stateMachine.ChangeState(new SwarmChase());
+            stateMachine.ChangeState(new ShooterChase());
         }
         else
         {

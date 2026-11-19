@@ -2,31 +2,33 @@ using UnityEngine;
 
 public class ProjectileShooter : MonoBehaviour
 {
-    public GameObject projectilePrefab; // The prefab of the projectile to be shot
-    public Transform shootPoint; // The point from which the projectile will be shot
+    public float speed = 10f;
+    public float lifetime = 4f;
+    public int damage = 1;
 
-    private float timer;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private Rigidbody rb;
+
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Launch(Vector3 direction)
     {
-        timer += Time.deltaTime;
+        rb.linearVelocity = direction.normalized * speed;
+        Destroy(gameObject, lifetime);
+    }
 
-        if (timer >= 2) // Shoot a projectile every second
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy") || other.CompareTag("Projectile"))
+            return;
+
+        if (other.CompareTag("ThePlayer"))
         {
-            timer = 0;
-            shoot();
+            Debug.Log($"Player hit for {damage} damage!");
         }
-    }
 
-    void shoot()
-    {
-        Instantiate(projectilePrefab, shootPoint.position, shootPoint.rotation);
-       
+        Destroy(gameObject);
     }
 }
