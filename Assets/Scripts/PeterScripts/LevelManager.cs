@@ -2,6 +2,7 @@ using System;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class LevelManager : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class LevelManager : MonoBehaviour
 
     private String nextLevel = null;
 
+    [SerializeField] TextMeshProUGUI thing = null;
+
     public void Awake()
     {
             
@@ -22,11 +25,18 @@ public class LevelManager : MonoBehaviour
     public void Start()
     {
        maxEnemies = GameObject.FindGameObjectsWithTag("Enemy").Length;
-        //Debug.Log("Number of enemies found in level! " + maxEnemies);
+       //Debug.Log("Number of enemies found in level! " + maxEnemies);
+
+       if(thing == null)
+       {
+           //Go find it
+           Debug.Log("Level Manager does not have Enemies to kill Text Box!");
+       }
     }
 
     public void LateUpdate()
     {
+        thing.text = "Enemies: " + maxEnemies +"\nDead: " + deadEnemies;
         if(deadEnemies >= maxEnemies)
         {
             canWin = true;
