@@ -17,13 +17,16 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI thing = null;
 
+    private UI_Script ui;
+
     public void Awake()
     {
             
     }
 
     public void Start()
-    {
+    {     
+       deadEnemies = 0;
        maxEnemies = GameObject.FindGameObjectsWithTag("Enemy").Length;
        //Debug.Log("Number of enemies found in level! " + maxEnemies);
 
@@ -32,6 +35,10 @@ public class LevelManager : MonoBehaviour
            //Go find it
            Debug.Log("Level Manager does not have Enemies to kill Text Box!");
        }
+
+       thing.text = "Enemies: " + maxEnemies +"\nDead: " + deadEnemies;
+
+       
     }
 
     public void LateUpdate()
@@ -47,6 +54,10 @@ public class LevelManager : MonoBehaviour
 
     public void LoadNextLevel()
     {
+        maxEnemies = 0;
+        deadEnemies = 0;
+        thing.text = "Enemies: " + maxEnemies +"\nDead: " + deadEnemies;
+
         Invoke(nameof(Load), loadDelay);
     }
 
@@ -55,8 +66,18 @@ public class LevelManager : MonoBehaviour
         //why on earth were we doing the below? -Ethelyn
         //Time.timeScale = 0.5f;
 
+        
+
+
+        maxEnemies = 0;
+        deadEnemies = 0;
+
+        thing.text = "Enemies: " + maxEnemies +"\nDead: " + deadEnemies;
+
         SceneManager.LoadScene("ResultScene");
+        
         MusicManager.PauseBackgroundMusic();
+
         //SceneManager.LoadScene("");
     }
 
