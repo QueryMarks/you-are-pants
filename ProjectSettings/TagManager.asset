@@ -9,7 +9,7 @@ TagManager:
   - Enemy
   - Wall
   - LevelManager
-  - Pickup
+  - Projectile
   layers:
   - Default
   - TransparentFX
@@ -19,7 +19,7 @@ TagManager:
   - UI
   - Attack
   - Enemy
-  - Pickup
+  - 
   - 
   - 
   - 
