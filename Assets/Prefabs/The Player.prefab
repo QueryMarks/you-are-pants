@@ -6074,4 +6074,3 @@ MonoBehaviour:
   health: 50
   stunTimer: 0
   invincible: 0
-  sprite: {fileID: 0}

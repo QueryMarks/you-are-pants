@@ -162,6 +162,12 @@ public class Player : MonoBehaviour
         healthText.text = "Health: " + health.health.ToString();
     }
 
+    public void GainHealth(float amount)
+    {
+        health.GainHealth(amount);
+        UpdateUI();
+    }
+
     //Default behavior for landing, such as resetting air action variables. -Ethelyn
     public void Land()
     {
@@ -174,13 +180,13 @@ public class Player : MonoBehaviour
     public void GoInvincible(int time)
     {
         health.invincible = time;
-        sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 50);
+        sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 0.5f);
         invincibleParticles.SetActive(true);
     }
     public void GoVincible()
     {
         health.invincible = 0;   
-        sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 100);
+        sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 1f);
         invincibleParticles.SetActive(false);
     }
 }

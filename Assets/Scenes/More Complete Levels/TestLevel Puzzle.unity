@@ -4026,6 +4026,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CameraFollowPlayer
   player: {fileID: 0}
   cameraZDistance: -10
+  minChaseDistance: 0.05
 --- !u!114 &539354328
 MonoBehaviour:
   m_ObjectHideFlags: 0

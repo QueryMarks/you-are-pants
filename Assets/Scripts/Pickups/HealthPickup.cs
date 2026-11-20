@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class HealthPickup : Pickup
 {
-    [SerializeField] float hpGain;
+    [SerializeField] float hpGain = 5;
     public override void Activate(Player player)
     {
-        player.health.GainHealth(hpGain);
+        player.GainHealth(hpGain);
         base.Activate(player);
     }
 }

@@ -8,14 +8,12 @@ public class Health : MonoBehaviour
     public int stunTimer = 0;
 
     public int invincible = -1;
-    public SpriteRenderer sprite;
 
     private Player player;
 
     void Start()
     {
         stateMachine = GetComponent<StateMachine>();
-        sprite = GetComponentInChildren<SpriteRenderer>();
         player = GetComponent<Player>();
     }
 
