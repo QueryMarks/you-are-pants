@@ -6,16 +6,27 @@ public class Health : MonoBehaviour
     public DMG_ALIGN healthAlign = DMG_ALIGN.PLAYERDMG;
     public float health = 50;
     public int stunTimer = 0;
-    Player player;
+
+    public int invincible = -1;
+    public SpriteRenderer sprite;
+
+    private Player player;
 
     void Start()
     {
         stateMachine = GetComponent<StateMachine>();
+        sprite = GetComponentInChildren<SpriteRenderer>();
+        player = GetComponent<Player>();
     }
 
     public void TakeDamage (Damager damager)
     {
         //Debug.Log("TAKING DAMAGE!");
+        if (invincible > 0)
+        {
+            Debug.Log("I am invincible! I can't be hurt!");
+            return;
+        }
         stunTimer = damager.hitstun;
         if (stateMachine != null)
         {
@@ -87,5 +98,20 @@ public class Health : MonoBehaviour
     public float GetHealth()
     {
         return health;
+    }
+
+    private void FixedUpdate()
+    {
+        if (invincible == 0)
+        {
+           if (player != null)
+            {
+                player.GoVincible();
+            }
+        }
+        if (invincible >= 0)
+        {
+            invincible -= 1;
+        }
     }
 }
