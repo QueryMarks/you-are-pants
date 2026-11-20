@@ -22,7 +22,7 @@ public class EnemyState : State
         {
             Debug.Log("I AM AN ENEMY, AND I HAVE DIED.");
             //enemy.Die();
-            enemy.health.BasicDie();
+            enemy.Die();
         }
         //if this state should be stunnable, include logic here, such as
         //stateMachine.ChangeState(new EnemyHurt());

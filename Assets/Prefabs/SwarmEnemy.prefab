@@ -85,6 +85,8 @@ MonoBehaviour:
   stateMachine: {fileID: 0}
   player: {fileID: 0}
   facing: 1
+  hpPickup: {fileID: 215830226121053140, guid: a55bac34f1510754b89cf1130f41817e, type: 3}
+  invinciblePickup: {fileID: 215830226121053140, guid: ae5a4049a0d1c8541a0c2dde40b882d9, type: 3}
   chaseDistance: 10
   attackDistance: 6
   chaseSpeed: 2
@@ -106,6 +108,7 @@ MonoBehaviour:
   healthAlign: 1
   health: 18
   stunTimer: 0
+  invincible: -1
 --- !u!114 &2903934441540784492
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -204,6 +204,15 @@ MonoBehaviour:
   - name: SwarmAttack
     audioClips:
     - {fileID: 8300000, guid: 9c56c331cbebac8488e8ea4b0eb11b09, type: 3}
+  - name: GoInvincible
+    audioClips:
+    - {fileID: 8300000, guid: e5c8fa0ee9cd3cf418d8229cd43e106e, type: 3}
+  - name: GoVincible
+    audioClips:
+    - {fileID: 8300000, guid: b4591930701c0294e9c5fa59974daa6e, type: 3}
+  - name: GainHealth
+    audioClips:
+    - {fileID: 8300000, guid: 8842b68757e8e8a4ab52d075b51c5c34, type: 3}
 --- !u!114 &2753598380104409537
 MonoBehaviour:
   m_ObjectHideFlags: 0

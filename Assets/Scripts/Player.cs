@@ -165,6 +165,7 @@ public class Player : MonoBehaviour
     public void GainHealth(float amount)
     {
         health.GainHealth(amount);
+        SoundEffectManager.Play("GainHealth");
         UpdateUI();
     }
 
@@ -182,11 +183,14 @@ public class Player : MonoBehaviour
         health.invincible = time;
         sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 0.5f);
         invincibleParticles.SetActive(true);
+        
+        SoundEffectManager.Play("GoInvincible");
     }
     public void GoVincible()
     {
         health.invincible = 0;   
         sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 1f);
         invincibleParticles.SetActive(false);
+        SoundEffectManager.Play("GoVincible");
     }
 }

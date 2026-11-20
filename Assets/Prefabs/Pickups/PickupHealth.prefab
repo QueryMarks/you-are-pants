@@ -126,4 +126,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ddf8c48c50ea9349b796f59d287e92a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthPickup
-  hpGain: 0
+  hpGain: 5

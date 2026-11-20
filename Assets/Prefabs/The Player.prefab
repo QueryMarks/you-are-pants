@@ -6073,4 +6073,4 @@ MonoBehaviour:
   healthAlign: 0
   health: 50
   stunTimer: 0
-  invincible: 0
+  invincible: -1
