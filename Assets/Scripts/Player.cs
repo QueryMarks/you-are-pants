@@ -174,13 +174,13 @@ public class Player : MonoBehaviour
     public void GoInvincible(int time)
     {
         health.invincible = time;
-        sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 127);
+        sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 50);
         invincibleParticles.SetActive(true);
     }
     public void GoVincible()
     {
         health.invincible = 0;   
-        sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 255);
+        sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 100);
         invincibleParticles.SetActive(false);
     }
 }
