@@ -7,7 +7,7 @@ public class PlayerJab : PlayerAttack
     public override void Enter()
     {
         //slide attack, may move to custom state for behavior with a more elaborate input reader
-        if (Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
         {
             
             anim = "Slide";
