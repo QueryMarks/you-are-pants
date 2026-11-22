@@ -6,11 +6,12 @@ public class RushChase : RusherState
     int offset = 5;
     float trueOffset;
 
+    float wadner = 3f;
+
     public override void Enter()
     {
         base.Enter();
         enemy.enemyRigid.linearVelocity = Vector3.zero;
-        trueOffset = offset;
         
     }
 
@@ -19,6 +20,7 @@ public class RushChase : RusherState
         Collider col;
         Ray ray;
         RaycastHit hit;
+        float trueX = enemy.player.transform.position.x;
 
         trueOffset = offset;
 
@@ -44,8 +46,8 @@ public class RushChase : RusherState
             
             col = rush.GetComponentInChildren<Collider>();
             //ray = new Ray(col.bounds.center,Vector3.up);
-            
 
+            
             if(Physics.Raycast(col.bounds.center,rush.transform.up, out hit, offset))
             {
                 //Debug.Log("There is something above Rusher!");
@@ -53,16 +55,16 @@ public class RushChase : RusherState
             }
 
             Vector3 target = new Vector3(enemy.player.transform.position.x, enemy.transform.position.y + trueOffset, enemy.player.transform.position.z);
-            
-           
-
             enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, target, (rush.chaseSpeed + timer/10) * Time.deltaTime);
+        
+
 
             if (Mathf.Abs(enemy.gameObject.transform.position.x - enemy.player.gameObject.transform.position.x) <= rush.chaseDistance)
             {
                 timer += 1;
                 if (timer >= 120)
                 {
+                    Debug.Log("Rusher Attacking!");
                     stateMachine.ChangeState(new RushAttack());
                 }
             }
