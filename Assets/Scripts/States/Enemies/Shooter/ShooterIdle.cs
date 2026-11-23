@@ -13,7 +13,7 @@ public class ShooterIdle : ShooterState
     {
         float dist = Mathf.Abs(enemy.gameObject.transform.position.x - enemy.player.gameObject.transform.position.x);
         //Debug.Log(dist);
-        if (dist <= swarm.chaseDistance)
+        if (dist <= shoot.chaseDistance)
         {
             //Debug.Log("CHASE THE PLAYER DOWN!!!!!!");
             stateMachine.ChangeState(new ShooterChase());

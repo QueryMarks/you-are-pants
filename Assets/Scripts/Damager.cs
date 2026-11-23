@@ -25,9 +25,9 @@ public class Damager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if (damageAlign == DMG_ALIGN.PLAYERDMG)
+        if (damageAlign == DMG_ALIGN.PLAYERDMG && owner != null)
         {
-            player = owner.GetComponent<Player>();
+            player = owner.GetComponentInParent<Player>();
         }
     }
 

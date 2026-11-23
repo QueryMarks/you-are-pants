@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System;
 
 public class Player : MonoBehaviour
 {
@@ -166,5 +167,10 @@ public class Player : MonoBehaviour
     public float GetHP()
     {
         return health.GetHealth();
+    }
+
+    internal void OnAttacked(int v)
+    {
+        throw new NotImplementedException();
     }
 }

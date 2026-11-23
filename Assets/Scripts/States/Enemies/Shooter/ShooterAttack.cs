@@ -7,9 +7,9 @@ public class ShooterAttack : ShooterState
     public override void Enter()
     {
         base.Enter();
-        swarm.hitbox.SetActive(true);
-        swarm.animator.SetTrigger("Attack");
-        enemy.enemyRigid.linearVelocity = Vector3.Normalize(enemy.player.transform.position - enemy.transform.position) * swarm.attackSpeed;
+        shoot.hitbox.SetActive(true);
+        shoot.animator.SetTrigger("Attack");
+        enemy.enemyRigid.linearVelocity = Vector3.Normalize(enemy.player.transform.position - enemy.transform.position) * shoot.attackSpeed;
     }
     public override void FixedUpdate()
     {
@@ -21,8 +21,8 @@ public class ShooterAttack : ShooterState
     }
     public override void Exit()
     {
-        swarm.animator.SetTrigger("Idle");
-        swarm.hitbox.SetActive(false);
+        shoot.animator.SetTrigger("Idle");
+        shoot.hitbox.SetActive(false);
     }
 
 }

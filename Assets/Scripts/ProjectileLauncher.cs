@@ -28,6 +28,9 @@ public class ProjectileLauncher : MonoBehaviour
 
     void Shoot()
     {
+        if (projectilePrefab == null || firePoint == null)
+        return;
+
         GameObject projectile = Instantiate(
             projectilePrefab,
             firePoint.position,
