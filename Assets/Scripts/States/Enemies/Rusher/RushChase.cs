@@ -64,7 +64,7 @@ public class RushChase : RusherState
                 timer += 1;
                 if (timer >= 120)
                 {
-                    Debug.Log("Rusher Attacking!");
+                    //Debug.Log("Rusher Attacking!");
                     stateMachine.ChangeState(new RushAttack());
                 }
             }

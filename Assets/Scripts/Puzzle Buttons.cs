@@ -6,9 +6,9 @@ public class PuzzleButtons : MonoBehaviour
 
     [SerializeField] Vector3 respawnSpot = new Vector3(0,0,-1); //z = -1 means the button has no respawn spot! - Used because I cannot set Vector2 t NULL!
 
-    [SerializeField] float maxVelocity = 3f;
-    [SerializeField] float slowDownVelocity = 0.6f;
-    [SerializeField] float playerSpeedUpVelocity = 0.3f;
+    [SerializeField] public float maxVelocity = 3f;
+    [SerializeField] public float slowDownVelocity = 0.6f;
+    [SerializeField] public float playerSpeedUpVelocity = 0.3f;
     
     Collider col;
     bool state = false;     //Whether or not this puzzle box is standing in the correct state!
@@ -142,5 +142,11 @@ public class PuzzleButtons : MonoBehaviour
                 rb.linearVelocity = new Vector3(newX,rb.linearVelocity.y,rb.linearVelocity.z);
             }
         }
+    }
+
+    public void ResetPosition()
+    {
+        transform.position = respawnSpot;
+        rb.linearVelocity = Vector3.zero;
     }
 }
