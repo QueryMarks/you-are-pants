@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Analytics;
 using UnityEngine.UIElements;
 public class RushChase : RusherState
 {
@@ -55,8 +56,7 @@ public class RushChase : RusherState
             }
 
             Vector3 target = new Vector3(enemy.player.transform.position.x, enemy.transform.position.y + trueOffset, enemy.player.transform.position.z);
-            enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, target, (rush.chaseSpeed + timer/10) * Time.deltaTime);
-        
+            enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, target, (rush.chaseSpeed + timer/10) * Time.deltaTime);        
 
 
             if (Mathf.Abs(enemy.gameObject.transform.position.x - enemy.player.gameObject.transform.position.x) <= rush.chaseDistance)

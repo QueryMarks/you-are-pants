@@ -3,6 +3,10 @@
 public class RushAttack : RusherState
 {
     int timer = 0;
+
+    bool once = true;
+    Vector3 startAttackPos = Vector3.zero;
+
     // Use this for initialization
     public override void Enter()
     {
@@ -13,10 +17,25 @@ public class RushAttack : RusherState
     }
     public override void FixedUpdate()
     {
+        Collider col;
+        RaycastHit hit;
+
+        //col = rush.GetComponentInChildren<Collider>();
+
+        if(once == true)
+        {
+            startAttackPos = enemy.transform.position;
+            once = false;
+        }
+
+         enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, startAttackPos, (rush.chaseSpeed + timer/10) * Time.deltaTime);
+       
+
         timer += 1;
         if (timer >= 45)
         {
             stateMachine.ChangeState(new RusherIdle());
+            once = true;
         }
     }
     public override void Exit()
