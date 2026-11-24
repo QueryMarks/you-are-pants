@@ -14,6 +14,7 @@ public class Signs : MonoBehaviour
     [SerializeField] float textBoxWidth = 300;
     [SerializeField] float textBoxHeight = 100;
 
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

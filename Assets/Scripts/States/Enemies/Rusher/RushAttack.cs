@@ -28,7 +28,7 @@ public class RushAttack : RusherState
             once = false;
         }
 
-         enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, startAttackPos, (rush.chaseSpeed + timer/10) * Time.deltaTime);
+        enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, startAttackPos, (rush.chaseSpeed + timer/10) * Time.deltaTime);
        
 
         timer += 1;

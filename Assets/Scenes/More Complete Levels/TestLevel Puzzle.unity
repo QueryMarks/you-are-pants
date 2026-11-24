@@ -2775,13 +2775,17 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: a2873cd0444ffc0469961790d3be30ad, type: 2}
+    - target: {fileID: 3392969301903977176, guid: 6f7865edaa52a4247810586a6af0f4b6, type: 3}
+      propertyPath: rightSpot.x
+      value: -74.27277
+      objectReference: {fileID: 0}
     - target: {fileID: 4231754265916981438, guid: 6f7865edaa52a4247810586a6af0f4b6, type: 3}
       propertyPath: m_Name
       value: Box - Puzzle Yellow
       objectReference: {fileID: 0}
     - target: {fileID: 7939313879369177408, guid: 6f7865edaa52a4247810586a6af0f4b6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -101.27277
+      value: -101.22
       objectReference: {fileID: 0}
     - target: {fileID: 7939313879369177408, guid: 6f7865edaa52a4247810586a6af0f4b6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2789,7 +2793,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7939313879369177408, guid: 6f7865edaa52a4247810586a6af0f4b6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10.3368225
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7939313879369177408, guid: 6f7865edaa52a4247810586a6af0f4b6, type: 3}
       propertyPath: m_LocalRotation.w
