@@ -2779,6 +2779,10 @@ PrefabInstance:
       propertyPath: rightSpot.x
       value: -74.27277
       objectReference: {fileID: 0}
+    - target: {fileID: 3392969301903977176, guid: 6f7865edaa52a4247810586a6af0f4b6, type: 3}
+      propertyPath: respawnSpot.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4231754265916981438, guid: 6f7865edaa52a4247810586a6af0f4b6, type: 3}
       propertyPath: m_Name
       value: Box - Puzzle Yellow
@@ -3102,6 +3106,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2106220733661182944, guid: 290d318142107fb499a86222e1425d2a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7197559723186720276, guid: 290d318142107fb499a86222e1425d2a, type: 3}
       propertyPath: m_Name
       value: t-shirt+cannon
@@ -15305,6 +15313,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1593965539}
     m_Modifications:
+    - target: {fileID: 3392969301903977176, guid: 6f7865edaa52a4247810586a6af0f4b6, type: 3}
+      propertyPath: respawnSpot.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4231754265916981438, guid: 6f7865edaa52a4247810586a6af0f4b6, type: 3}
       propertyPath: m_Name
       value: Box - Puzzle
