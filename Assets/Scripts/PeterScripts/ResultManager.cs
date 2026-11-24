@@ -20,4 +20,9 @@ public class ResultManager : MonoBehaviour
         timerText.text = "TIME: " + string.Format("{0:00}:{1:00}:{2:000}",
             minutes, seconds, milliseconds);
     }
+    public void Retry()
+    {
+        SceneManager.LoadScene("StartScene");
+        MusicManager.PlayBackgroundMusic(true);
+    }
 }
