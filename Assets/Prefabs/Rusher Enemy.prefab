@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 968341919915122688}
   m_Layer: 0
   m_Name: Rusher Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,9 +84,7 @@ MonoBehaviour:
   stateMachine: {fileID: 0}
   player: {fileID: 0}
   facing: 1
-  hpPickup: {fileID: 215830226121053140, guid: a55bac34f1510754b89cf1130f41817e, type: 3}
-  invinciblePickup: {fileID: 215830226121053140, guid: ae5a4049a0d1c8541a0c2dde40b882d9, type: 3}
-  chaseDistance: 5
+  chaseDistance: 10
   attackDistance: 30
   chaseSpeed: 4
   attackSpeed: 10
@@ -105,9 +103,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Health
   stateMachine: {fileID: 0}
   healthAlign: 1
-  health: 20
+  health: 7
   stunTimer: 0
-  invincible: -1
 --- !u!114 &5990757021560319427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,7 +228,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 0.12}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7818813755328319973}
@@ -251,7 +248,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3668544126939837480}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -269,7 +266,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: b2143f0b9c223d94fb1beb8c8b12195d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -312,8 +309,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.8571033
-  m_Center: {x: 0.3337626, y: 0.023339808, z: 0}
+  m_Radius: 0.6716723
+  m_Center: {x: 0.07416153, y: -0.12500387, z: 0}
 --- !u!114 &5546487968524337180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -329,8 +326,8 @@ MonoBehaviour:
   owner: {fileID: 1411992199589467374}
   damageAlign: 1
   damage: 10
-  hitstun: 30
-  knockback: {x: 0, y: 0, z: 0}
+  hitstun: 0
+  knockback: {x: 3, y: 0, z: 0}
 --- !u!1 &8668677733159046495
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,9 +6,9 @@ public class PuzzleButtons : MonoBehaviour
 
     [SerializeField] Vector3 respawnSpot = new Vector3(0,0,-1); //z = -1 means the button has no respawn spot! - Used because I cannot set Vector2 t NULL!
 
-    [SerializeField] float maxVelocity = 3f;
-    [SerializeField] float slowDownVelocity = 0.6f;
-    [SerializeField] float playerSpeedUpVelocity = 0.3f;
+    [SerializeField] public float maxVelocity = 3f;
+    [SerializeField] public float slowDownVelocity = 0.6f;
+    [SerializeField] public float playerSpeedUpVelocity = 0.3f;
     
     Collider col;
     bool state = false;     //Whether or not this puzzle box is standing in the correct state!
@@ -42,25 +42,30 @@ public class PuzzleButtons : MonoBehaviour
 
         //Debug.Log(transform.position.ToString() + "\n" + rightSpot.ToString());
 
-        if(transform.position.x >= rightSpot.x && transform.position.x <= rightSpot.x + 1)
+        if(respawnSpot.z != -1)
         {
-            //I am within the right spot on the X!
-            if(transform.position.y >= rightSpot.y && transform.position.y <= rightSpot.y + 1)
+            if(transform.position.x >= rightSpot.x && transform.position.x <= rightSpot.x + 1)
             {
-                //I am within the right spot on both X and Y!
-                state = true;
-                //Debug.Log("I am in the right spot!");
+                //I am within the right spot on the X!
+                if(transform.position.y >= rightSpot.y && transform.position.y <= rightSpot.y + 1)
+                {
+                    //I am within the right spot on both X and Y!
+                    state = true;
+                    //Debug.Log("I am in the right spot!");
+                }
+                else
+                {
+                    state = false;
+                }
+
             }
             else
             {
                 state = false;
             }
+        }
 
-        }
-        else
-        {
-            state = false;
-        }
+        
     }
 
     public void FixedUpdate()
@@ -142,5 +147,11 @@ public class PuzzleButtons : MonoBehaviour
                 rb.linearVelocity = new Vector3(newX,rb.linearVelocity.y,rb.linearVelocity.z);
             }
         }
+    }
+
+    public void ResetPosition()
+    {
+        transform.position = respawnSpot;
+        rb.linearVelocity = Vector3.zero;
     }
 }
