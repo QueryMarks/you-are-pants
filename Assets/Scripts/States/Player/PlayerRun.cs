@@ -9,6 +9,7 @@ public class PlayerRun : PlayerState
     {
         base.Enter();
         player.animator.SetTrigger("Run");
+
     }
     // Update is called once per frame
     public override void FixedUpdate()
@@ -91,5 +92,10 @@ public class PlayerRun : PlayerState
             StopFootsteps();
             stateMachine.ChangeState(new PlayerJab());
         }
+    }
+    public override void Exit()
+    {
+        StopFootsteps();
+        base.Exit();
     }
 }
