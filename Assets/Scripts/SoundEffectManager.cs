@@ -69,13 +69,6 @@ public class SoundEffectManager : MonoBehaviour
     {
         runAudioSource.Stop();
     }
-    /*
-    public void UpdateSlider(Slider newSlider)
-    {
-        sfxSlider = newSlider;
-        sfxSlider.SetValueWithoutNotify(audioSource.volume);
-        sfxSlider.onValueChanged.AddListener(value => SetVolume(value));
-    }*/
     public float GetVolume()
     {
         return audioSource.volume;

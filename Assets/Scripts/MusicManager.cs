@@ -53,13 +53,6 @@ public class MusicManager : MonoBehaviour
     {
         Instance.audioSource.Pause();
     }
-    /*
-    public void UpdateSlider(Slider newSlider)
-    {
-        musicSlider = newSlider;
-        musicSlider.SetValueWithoutNotify(audioSource.volume);
-        musicSlider.onValueChanged.AddListener(value => SetVolume(value));
-    }*/
     public float GetVolume()
     {
         return audioSource.volume;
