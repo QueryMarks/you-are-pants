@@ -455,5 +455,5 @@ MonoBehaviour:
   owner: {fileID: 1121976531230497832}
   damageAlign: 1
   damage: 5
-  hitstun: 0
+  hitstun: 15
   knockback: {x: 5, y: 4, z: 0}

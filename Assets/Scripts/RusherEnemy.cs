@@ -10,7 +10,7 @@ public class RusherEnemy : Enemy
     public GameObject hitbox;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    new void Start()
     {
         base.Start();
         stateMachine.StateInit(new RusherIdle());

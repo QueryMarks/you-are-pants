@@ -6,7 +6,8 @@ public class PlayerHurt : PlayerState
     public override void Enter()
     {
         base.Enter();
-        animator.SetTrigger("Idle");
+        animator = player.GetComponent<Animator>();
+        animator.SetTrigger("Hurt");
     }
     public override void FixedUpdate()
     {
