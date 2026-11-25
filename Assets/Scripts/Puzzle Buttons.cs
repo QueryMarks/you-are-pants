@@ -52,6 +52,7 @@ public class PuzzleButtons : MonoBehaviour
                     //I am within the right spot on both X and Y!
                     state = true;
                     //Debug.Log("I am in the right spot!");
+                    //Debug.Log(transform.position.ToString());
                 }
                 else
                 {
