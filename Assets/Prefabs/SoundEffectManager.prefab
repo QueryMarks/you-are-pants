@@ -213,6 +213,12 @@ MonoBehaviour:
   - name: GainHealth
     audioClips:
     - {fileID: 8300000, guid: 8842b68757e8e8a4ab52d075b51c5c34, type: 3}
+  - name: Parry
+    audioClips:
+    - {fileID: 8300000, guid: 0a67bf5006f30d643a82885d729c4255, type: 3}
+  - name: ParryAttack
+    audioClips:
+    - {fileID: 8300000, guid: ce2386b79e35b72458074ead422edc1f, type: 3}
 --- !u!114 &2753598380104409537
 MonoBehaviour:
   m_ObjectHideFlags: 0

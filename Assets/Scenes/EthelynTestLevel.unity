@@ -6081,7 +6081,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LevelManager
   loadDelay: 0.5
   canWin: 0
-  thing: {fileID: 261012562}
+  thing: {fileID: 0}
 --- !u!4 &855767459
 Transform:
   m_ObjectHideFlags: 0
@@ -12916,9 +12916,9 @@ MonoBehaviour:
   numToDie: 1
   buttons:
   - {fileID: 1703803369}
-  deathCube: 1
-  deathCubeObject: {fileID: 6394689388811590772, guid: 128ee919c9988f240823372d4ea0687b, type: 3}
-  deathCubeSpot: {x: -88, y: -5, z: 0}
+  deathCube: 0
+  deathCubeObject: {fileID: 0}
+  deathCubeSpot: {x: 0, y: 0, z: 0}
 --- !u!1001 &1768204804
 PrefabInstance:
   m_ObjectHideFlags: 0
