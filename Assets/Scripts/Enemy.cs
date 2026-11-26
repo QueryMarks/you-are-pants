@@ -18,6 +18,9 @@ public abstract class Enemy : MonoBehaviour
 
     private float currentHealth;
     private float maxHealth;
+
+    [SerializeField] GameObject hpPickup;
+    [SerializeField] GameObject invinciblePickup;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Start()
     {
@@ -78,7 +81,24 @@ public abstract class Enemy : MonoBehaviour
     }
 
     public void Die()
-    {        
+    {
+        Debug.Log("dying");
+        int choice = Random.Range(0, 10);
+        GameObject pickup;
+        if (choice <= 7)
+        {
+            pickup = Instantiate(hpPickup);
+        }
+        else
+        {
+            pickup = Instantiate(invinciblePickup);
+        }
+        if (pickup != null)
+        {
+            pickup.transform.position = transform.position;
+        }
+
+
         health.BasicDie();
     }
     public void Face(bool faceRight)
