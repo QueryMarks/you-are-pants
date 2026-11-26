@@ -1,3 +1,6 @@
+https://www.indiedb.com/members/gruntkiller247/blogs
+https://forums.tigsource.com/index.php?topic=77519.msg1475022#msg1475022
+
 New Changes:
 Add health and invincibitity pickups.
 Add short hop mechanic.

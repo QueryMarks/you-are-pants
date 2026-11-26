@@ -6335,7 +6335,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3392969301903977176, guid: 6f7865edaa52a4247810586a6af0f4b6, type: 3}
       propertyPath: rightSpot.x
-      value: 55.86
+      value: 52
       objectReference: {fileID: 0}
     - target: {fileID: 3392969301903977176, guid: 6f7865edaa52a4247810586a6af0f4b6, type: 3}
       propertyPath: rightSpot.y
