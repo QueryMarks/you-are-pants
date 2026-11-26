@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System;
 
 public class Player : MonoBehaviour
 {
@@ -188,6 +189,7 @@ public class Player : MonoBehaviour
     {
         return health.GetHealth();
     }
+
     public void GoInvincible(int time)
     {
         health.invincible = time;

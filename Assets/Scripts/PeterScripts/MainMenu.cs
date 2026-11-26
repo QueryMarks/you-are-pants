@@ -9,8 +9,14 @@ public class MainMenu : MonoBehaviour
     public Slider sfxSlider;
     public void PlayGame()
     {
-        SceneManager.LoadSceneAsync("P-TestLevel Puzzle");
+        SceneManager.LoadSceneAsync("TestLevel Puzzle");
     }
+
+    public void PlayLevel2()
+    {
+        SceneManager.LoadSceneAsync("TestLevel Parkou");
+    }
+
     public void OpenOptions()
     {
         mainMenuPanel.SetActive(false);
