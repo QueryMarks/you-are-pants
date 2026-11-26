@@ -189,12 +189,7 @@ public class Player : MonoBehaviour
     {
         return health.GetHealth();
     }
-<<<<<<< HEAD
 
-    internal void OnAttacked(int v)
-    {
-        throw new NotImplementedException();
-=======
     public void GoInvincible(int time)
     {
         health.invincible = time;
@@ -209,6 +204,5 @@ public class Player : MonoBehaviour
         sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 1f);
         invincibleParticles.SetActive(false);
         SoundEffectManager.Play("GoVincible");
->>>>>>> main
     }
 }
