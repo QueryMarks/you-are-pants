@@ -17,21 +17,24 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/TestLevel.unity
     guid: 05e0064def470c74688beb43f590d9cc
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/UI/ResultScene.unity
     guid: 96b153d3d65692447a2b35d2545dec14
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/More Complete Levels/TestLevel Puzzle.unity
     guid: b9d606f3a0802c644a2a2ae063db4232
   - enabled: 1
     path: Assets/Scenes/UI/LoseScene.unity
     guid: 846d800acf5a3fd4d93bca38a5c67fb1
-  - enabled: 1
-    path: Assets/Scenes/More Complete Levels/P-TestLevel Puzzle.unity
+  - enabled: 0
+    path: Assets/Scenes/P-TestLevel Puzzle.unity
     guid: a482f34fac12741498f6b228dbbd61ba
   - enabled: 1
     path: Assets/Scenes/UI/WinScene.unity
     guid: e117517e0fac3c847a21401e05fc42e3
+  - enabled: 1
+    path: Assets/Scenes/More Complete Levels/TestLevel Parkou.unity
+    guid: d82a885306df833409252e5597aec7aa
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
