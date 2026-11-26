@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 public class ProjectileLauncher : MonoBehaviour
@@ -10,6 +9,8 @@ public class ProjectileLauncher : MonoBehaviour
     public float projectileSpeed = 10f;
     public float fireRate = 2f;
     public float range = 10f;
+
+    public bool shootAt80Degrees = false;
 
     private float nextFireTime;
 
@@ -39,6 +40,9 @@ public class ProjectileLauncher : MonoBehaviour
 
     void Shoot()
     {
+        if (projectilePrefab == null || firePoint == null)
+        return;
+
         GameObject projectile = Instantiate(
             projectilePrefab,
             firePoint.position,
@@ -49,9 +53,26 @@ public class ProjectileLauncher : MonoBehaviour
         if (damager != null)
         {
             damager.owner = gameObject;
+            damager.damageAlign = DMG_ALIGN.ENEMYDMG;
         }
         Rigidbody rb = projectile.GetComponent<Rigidbody>();
 
+        Vector3 direction;
+
+        if (shootAt80Degrees)
+        {
+            // 80 degrees from the X axis
+            float angle = 80f * Mathf.Deg2Rad;
+            direction = new Vector3(
+                Mathf.Cos(angle),
+                Mathf.Sin(angle),
+                0f
+            ).normalized;
+        }
+        else
+        {
+            direction = Vector3.left;
+        }
         rb.linearVelocity = Vector3.left * projectileSpeed;
     }
 }

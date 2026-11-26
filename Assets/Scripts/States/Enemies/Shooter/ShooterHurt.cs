@@ -7,7 +7,7 @@ public class ShooterHurt : ShooterState
     public override void Enter()
     {
         base.Enter();
-        Debug.Log("i am swarm and i am so hurt and in pain");
+        Debug.Log("Ow, I am hurt and in pain");
         enemy.enemyRigid.useGravity = true;
     }
     public override void FixedUpdate()

@@ -3,14 +3,14 @@ using System.Collections;
 
 public class ShooterState : EnemyState
 {
-    public ShooterEnemy swarm;
+    public ShooterEnemy shoot;
 
     public override void Enter()
     {
         base.Enter();
         if (enemy is ShooterEnemy)
         {
-            swarm = (ShooterEnemy)enemy;
+            shoot = (ShooterEnemy)enemy;
         }
         
     }
