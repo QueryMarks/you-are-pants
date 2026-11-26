@@ -40,15 +40,17 @@ public class PuzzleButtons : MonoBehaviour
         //If the box I am assigned to is ontop of me
         //Change my state to true! - meaning the the thing is complete!
 
-        //Debug.Log(transform.position.ToString() + "\n" + rightSpot.ToString());
+        Debug.Log(transform.position.ToString() + "\n" + rightSpot.ToString());
 
         if(respawnSpot.z != -1)
         {
             if(transform.position.x >= rightSpot.x && transform.position.x <= rightSpot.x + 1)
             {
+                Debug.Log("Corret X");
                 //I am within the right spot on the X!
                 if(transform.position.y >= rightSpot.y && transform.position.y <= rightSpot.y + 1)
                 {
+                    Debug.Log("Correct Y");
                     //I am within the right spot on both X and Y!
                     state = true;
                     //Debug.Log("I am in the right spot!");
@@ -66,6 +68,7 @@ public class PuzzleButtons : MonoBehaviour
             }
         }
 
+        Debug.Log("");
         
     }
 
