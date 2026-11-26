@@ -14,11 +14,22 @@ public class ProjectileLauncher : MonoBehaviour
 
     private float nextFireTime;
 
+    void Start()
+    {
+        if(player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("ThePlayer").transform;
+
+            if (player == null)
+            {
+                Debug.Log("Projectile Launcher failed to find ThePlayer gameobject!");
+                return;
+            }
+        }
+    }
+
     void Update()
     {
-        if (player == null){
-            return;
-        }
         float distance = Vector3.Distance(transform.position, player.position);
         if(distance<=range&&Time.time>=nextFireTime)
         {

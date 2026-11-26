@@ -2,17 +2,37 @@
 using UnityEngine;
 public class PlayerJump : PlayerState
 {
+    bool letGo = false;
     public override void Enter()
     {
         base.Enter();
         Vector3 newVelocity = playerRigid.linearVelocity;
-        newVelocity.y = player.jumpPower = 10f;
+        newVelocity.y = player.jumpPower;
         playerRigid.linearVelocity = newVelocity;
+        //playerRigid.useGravity = false;
         player.animator.SetTrigger("Jump");
     }
 
     public override void FixedUpdate()
     {
+        if (!letGo)
+        {
+            float velo = playerRigid.linearVelocity.y;
+            if (!Input.GetKey(KeyCode.Space))
+            {
+                velo *= 0.5f;
+                letGo = true;
+                playerRigid.linearVelocity = new Vector3(
+                    playerRigid.linearVelocity.x,
+                    velo,
+                    playerRigid.linearVelocity.z
+                );
+                
+            }
+        }
+
+
+
         player.DefaultMove();
         if (Input.GetAxisRaw("Horizontal") < 0)
         {
@@ -54,10 +74,17 @@ public class PlayerJump : PlayerState
             player.gameObject.transform.localScale = new Vector3(player.facing, 1, 1);
             stateMachine.ChangeState(new PlayerAirCombo());
         }
+        else if (Input.GetKeyDown(KeyCode.X))
+        {
+            player.gameObject.transform.localScale = new Vector3(player.facing, 1, 1);
+            stateMachine.ChangeState(new PlayerParry());
+        }
     }
     public override void Exit()
     {
+        //playerRigid.useGravity = true;
         base.Exit();
+        
         //player.gameObject.transform.localScale = new Vector3(player.facing, 1, 1);
     }
 }

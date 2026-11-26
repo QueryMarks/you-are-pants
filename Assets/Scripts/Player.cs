@@ -26,8 +26,10 @@ public class Player : MonoBehaviour
     public bool canDoubleJump = true;
     [SerializeField] TextMeshProUGUI comboText = null;
     [SerializeField] TextMeshProUGUI healthText = null;
-    
 
+    [SerializeField] SpriteRenderer sprite;
+
+    [SerializeField] GameObject invincibleParticles;
 
     //A bool used for cancelling attacks in combos early. Set/unset by the animator, and checked/unset by the player's state.
     public bool cancelCheck;
@@ -37,8 +39,10 @@ public class Player : MonoBehaviour
         myObject = this.gameObject;
         animator = GetComponent<Animator>();
         health = GetComponent<Health>();
+        sprite = GetComponentInChildren<SpriteRenderer>();
         //Debug.Log("welcome to my awesome player start");
         playerRigid = GetComponentInChildren<Rigidbody>();
+        invincibleParticles = transform.Find("InvincibleParticles").gameObject;
 
         if(playerRigid == null)
         {
@@ -159,6 +163,13 @@ public class Player : MonoBehaviour
         healthText.text = "Health: " + health.health.ToString();
     }
 
+    public void GainHealth(float amount)
+    {
+        health.GainHealth(amount);
+        SoundEffectManager.Play("GainHealth");
+        UpdateUI();
+    }
+
     //Default behavior for landing, such as resetting air action variables. -Ethelyn
     public void Land()
     {
@@ -168,9 +179,26 @@ public class Player : MonoBehaviour
     {
         return health.GetHealth();
     }
+<<<<<<< HEAD
 
     internal void OnAttacked(int v)
     {
         throw new NotImplementedException();
+=======
+    public void GoInvincible(int time)
+    {
+        health.invincible = time;
+        sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 0.5f);
+        invincibleParticles.SetActive(true);
+        
+        SoundEffectManager.Play("GoInvincible");
+    }
+    public void GoVincible()
+    {
+        health.invincible = 0;   
+        sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 1f);
+        invincibleParticles.SetActive(false);
+        SoundEffectManager.Play("GoVincible");
+>>>>>>> main
     }
 }

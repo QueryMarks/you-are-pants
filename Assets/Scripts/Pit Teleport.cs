@@ -19,6 +19,7 @@ public class PitTeleport : MonoBehaviour
     {
         Enemy es;
         Rigidbody rb;
+        PuzzleButtons pb;
 
         //Debug.Log("AFSHASDJANSF");
 
@@ -37,6 +38,17 @@ public class PitTeleport : MonoBehaviour
             {
                rb.linearVelocity = Vector3.zero; 
             }
+        }
+        else if(other.tag == "Puzzle Block")
+        {
+            Debug.Log("Puzzle Block is going out of bounds!");
+            pb = other.GetComponent<PuzzleButtons>();
+
+            if(pb != null)
+            {
+                pb.ResetPosition();
+            }
+            
         }
         else
         {

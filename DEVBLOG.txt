@@ -1,0 +1,41 @@
+
+https://www.indiedb.com/members/gruntkiller247/blogs/class-alpha-you-are-pants#articlesform 
+
+https://forums.tigsource.com/index.php?topic=77519.0
+
+
+You are Pants
+
+Have you ever considered the lengths you might go as a pair of pants to be sold?
+
+Now you have! Here is the Alpha update to our school project!
+
+New Changes:
+Fixed bug preventing player from turning mid jump.
+Fixed bug preventing the level from ending
+Combo timing for the player made easier
+Level is given proper bounds to prevent player and enemy playing astronaut
+
+Rusher Enemy created.
+Moves towards the player and tries to jump on top of them.
+
+Added a Giant blue cube that spawns when a player completes the second cube puzzle to help players who don't have a full grasp on the movement mechanics.
+
+Puzzle cubes can be surfed.
+Puzzle cubes do not exceed the player's max speed
+
+Test Level Puzzle has had additional rooms/mechanics designed to guide the player.
+Puzzle 1's room has been expanded to include a pit with a bottom to introduce the fact they will exist.
+A Rusher has been placed in the Puzzle 1 room to introduce an easy to combat enemy.
+Room 3 has been expanded to include a hallway with blockers, a turret, and spawners.
+The turret is far behind several barricades to guide the player on how to avoid the projectiles.
+The spawners are placed between two barricades forcing the player to jump into them in order to introduce them.
+A UI element showcasing how many enemies need to be killed to complete the level and how many are currently dead.
+
+
+Motivation:
+The group's main motivation has been to make the test level have more juice, the enemies to feel more alive, and to introduce more polish like elements into the game.
+
+
+What's Next:
+Beginning development on a second level intending to showcase the air movement and puzzle cubes.
