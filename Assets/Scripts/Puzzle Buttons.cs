@@ -40,7 +40,7 @@ public class PuzzleButtons : MonoBehaviour
         //If the box I am assigned to is ontop of me
         //Change my state to true! - meaning the the thing is complete!
 
-        Debug.Log(transform.position.ToString() + "\n" + rightSpot.ToString());
+        //Debug.Log(transform.position.ToString() + "\n" + rightSpot.ToString());
 
         if(respawnSpot.z != -1)
         {
