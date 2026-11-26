@@ -130,3 +130,5 @@ MonoBehaviour:
   fontSize: 24
   textBoxWidth: 300
   textBoxHeight: 100
+  talkDistance: 5
+  animator: {fileID: 0}

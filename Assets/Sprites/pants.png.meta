@@ -635,6 +635,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: pants_22
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc53bfc14f936f848b06eac890d96b2b
+      internalID: 1229703314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -666,6 +688,7 @@ TextureImporter:
       pants_2: 4303492702523705550
       pants_20: 802619303
       pants_21: 215759254
+      pants_22: 1229703314
       pants_3: 1778495745541916285
       pants_4: -5091526601486579408
       pants_5: 2425370133987659017

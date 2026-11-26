@@ -25,7 +25,7 @@ public class RusherState : EnemyState
         {
             //Debug.Log("I AM A RUSHER ENEMY, AND I HAVE DIED.");
             //enemy.Die();
-            enemy.health.BasicDie();
+            enemy.Die();
         }
         enemy.health.TakeKnockback(damager);
         stateMachine.ChangeState(new RushHurt());

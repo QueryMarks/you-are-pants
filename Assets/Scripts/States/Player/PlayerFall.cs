@@ -44,6 +44,11 @@ public class PlayerFall : PlayerState
             player.gameObject.transform.localScale = new Vector3(player.facing, 1, 1);
             stateMachine.ChangeState(new PlayerAirCombo());
         }
+        else if (Input.GetKeyDown(KeyCode.X))
+        {
+            player.gameObject.transform.localScale = new Vector3(player.facing, 1, 1);
+            stateMachine.ChangeState(new PlayerParry());
+        }
     }
     public override void Exit()
     {
