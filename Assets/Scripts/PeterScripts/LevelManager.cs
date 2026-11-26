@@ -73,8 +73,21 @@ public class LevelManager : MonoBehaviour
         deadEnemies = 0;
 
         thing.text = "Enemies: " + maxEnemies +"\nDead: " + deadEnemies;
+        Player player = FindFirstObjectByType<Player>();
+        UI_Script ui = FindFirstObjectByType<UI_Script>();
 
-        SceneManager.LoadScene("ResultScene");
+        if (player != null && ui != null && GameManager.instance != null)
+        {
+            GameManager.instance.SaveResults(player.GetHP(), player.GetCombo(), ui.GetTime());
+
+            Debug.Log("Results saved before winning!");
+        }
+        else
+        {
+            Debug.LogError("Could not find Player, UI_Script, or GameManager!");
+        }
+
+        SceneManager.LoadScene("WinScene");
         
         MusicManager.PauseBackgroundMusic();
 

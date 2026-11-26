@@ -13,6 +13,7 @@ public class MusicManager : MonoBehaviour
         {
             Instance = this;
             audioSource =  GetComponent<AudioSource>();
+            audioSource.volume = PlayerPrefs.GetFloat("MusicVolume", 1f);
             DontDestroyOnLoad(gameObject);
         }
         else
@@ -26,11 +27,12 @@ public class MusicManager : MonoBehaviour
         {
             PlayBackgroundMusic(false, backgroundMusic);
         }
-        musicSlider.onValueChanged.AddListener(delegate { SetVolume(musicSlider.value); });
+        //musicSlider.onValueChanged.AddListener(delegate { SetVolume(musicSlider.value); });
     }
     public static void SetVolume(float volume)
     {
         Instance.audioSource.volume = volume;
+        PlayerPrefs.SetFloat("MusicVolume", volume);
     }
     public static void  PlayBackgroundMusic(bool resetSong, AudioClip audioClip = null)
     {
@@ -51,5 +53,16 @@ public class MusicManager : MonoBehaviour
     {
         Instance.audioSource.Pause();
     }
- 
+    public float GetVolume()
+    {
+        return audioSource.volume;
+    }
+    public void ConnectSlider(Slider slider)
+    {
+        musicSlider = slider;
+        musicSlider.onValueChanged.RemoveAllListeners();
+        musicSlider.SetValueWithoutNotify(audioSource.volume);
+        musicSlider.onValueChanged.AddListener(SetVolume);
+    }
+
 }

@@ -32,18 +32,22 @@ public class SoundEffectManager : MonoBehaviour
             audioSource.PlayOneShot(audioClip);
         }
     }
+    /*
     void Start()
     {
         sfxSlider.onValueChanged.AddListener(delegate { OnValueChanged(); });
-    }
+    }*/
     public static void SetVolume(float volume)
     {
         audioSource.volume = volume;
+        runAudioSource.volume = volume;
+
     }
+    /*
    public void OnValueChanged()
     {
         SetVolume(sfxSlider.value);
-    }
+    }*/
     public static void Stop()
     {
         audioSource.Stop();
@@ -64,5 +68,16 @@ public class SoundEffectManager : MonoBehaviour
     public static void StopRun()
     {
         runAudioSource.Stop();
+    }
+    public float GetVolume()
+    {
+        return audioSource.volume;
+    }
+    public void ConnectSlider(Slider slider)
+    {
+        sfxSlider = slider;
+        sfxSlider.onValueChanged.RemoveAllListeners();
+        sfxSlider.SetValueWithoutNotify(audioSource.volume);
+        sfxSlider.onValueChanged.AddListener(SetVolume);
     }
 }

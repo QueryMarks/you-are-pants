@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     public int facing = 1;
 
     public int combo = 0;
+    public int highestCombo = 0;
 
     public bool canDoubleJump = true;
     [SerializeField] TextMeshProUGUI comboText = null;
@@ -75,8 +76,9 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
+        GameManager.instance.SaveResults(GetHP(), GetCombo(), FindFirstObjectByType<UI_Script>().GetTime());
         //Debug.Log("PLAYER SCRIPT! i have died");
-        SceneManager.LoadScene("ResultScene");
+        SceneManager.LoadScene("LoseScene");
         MusicManager.PauseBackgroundMusic();
 
     }
@@ -153,7 +155,15 @@ public class Player : MonoBehaviour
     public void UpdateCombo(int amount)
     {
         combo = amount;
+        if(combo > highestCombo)
+        {
+            highestCombo = combo;
+        }
         UpdateUI();
+    }
+    public int GetCombo()
+    {
+        return highestCombo;
     }
 
     public void UpdateUI()
