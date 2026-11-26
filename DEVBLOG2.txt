@@ -1,0 +1,31 @@
+https://www.indiedb.com/members/gruntkiller247/blogs
+https://forums.tigsource.com/index.php?topic=77519.msg1475022#msg1475022
+
+New Changes:
+Add health and invincibitity pickups.
+Add short hop mechanic.
+Add smooth camera tracking.
+Add level tileset.
+Add skyboxes.
+Add visuals for cart puzzle blocks.
+Add visuals for signs.
+Add pause menu, options menu, win screen, and lose screen.
+Add parry attack, performed with X. Get hit during parry to counterattack!
+Add player hurt animation.
+Add level 2.
+
+Fix player scaling during squash and stretch.
+Fix slide using S.
+Weaken rusher enemy.
+Adjust enemy spawner visuals.
+Properly implement end-of-level stats.
+
+What's the Motivation?:
+We made a number of changes to the player this week, such as the parry and short hop, to make the character better to control and give the player new options for gameplay styles during combat. We also added a lot of new visuals such as the skyboxes, tileset, signs, etc. to make the levels feel less like a default Unity experience and more like the real mall. We also added more features to the UI such as pausing and a better results screen for the same reason. 
+
+Some options were also added in direct response to player feedback, such as the addition of the parry and the short hop, and the hurt animation. We want to make sure things are clear to the player and features for movement and combat are present if they'd feel right here. The parry sounded right for this style of game, so we added it.
+
+What's Next?:
+We want to add more enemies for variety's sake and make the levels feel more professional in level design. It'd also be good for the combos to serve a purpose... Perhaps in the future, the pants will unlock new abilities. Could the combo meter help...? (Hint: yes)
+
+As always, we'll be updating the visuals in the process.
