@@ -9,7 +9,7 @@ public class PlayerAttack: PlayerState
         base.Enter();
         animator = player.GetComponent<Animator>();
         animator.SetTrigger(anim);
-        Debug.Log("Playing sound: " + anim);
+        //Debug.Log("Playing sound: " + anim);
         SoundEffectManager.Play(anim);
     }
     public override void Exit()

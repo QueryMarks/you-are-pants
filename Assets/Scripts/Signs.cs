@@ -14,6 +14,12 @@ public class Signs : MonoBehaviour
     [SerializeField] float textBoxWidth = 300;
     [SerializeField] float textBoxHeight = 100;
 
+    private GameObject player;
+    [SerializeField] float talkDistance = 5f;
+
+    [SerializeField] Animator animator;
+
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -37,12 +43,27 @@ public class Signs : MonoBehaviour
         rect.anchoredPosition = Vector2.zero;
         rect.transform.localPosition =  new Vector3(transform.position.x,transform.position.y + 1.5f,transform.position.z);
 
+        player = GameObject.FindGameObjectWithTag("ThePlayer");
+        animator = GetComponent<Animator>();
+
         
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(player != null)
+        {
+            if (//Vector3.Distance(player.transform.position, transform.position) <= talkDistance)
+                Mathf.Abs(player.transform.position.x - transform.position.x) < talkDistance)
+            {
+                showText(signText);
+            }
+            else
+            {
+                hideText();
+            }
+        }
         Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position + new Vector3(position.x,position.y,0));
 
         rect.position = screenPos;
@@ -60,11 +81,31 @@ public class Signs : MonoBehaviour
 
         rect.position = screenPos;
         */
+
     }
 
     public void setText(String inText)
     {
         signText = inText;      
         tmp.text = signText;
+    }
+    
+    public void showText(String text)
+    {
+        if (animator != null)
+        {
+            animator.SetBool("On", true);
+        }
+        
+        tmp.text = text;
+    }
+    public void hideText()
+    {
+        if (animator != null)
+        {
+            animator.SetBool("On", false);
+        }
+        
+        tmp.text = "";
     }
 }

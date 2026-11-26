@@ -39,5 +39,10 @@ public class PlayerIdle : PlayerState
         {
             stateMachine.ChangeState(new PlayerJab());
         }
+        else if (Input.GetKeyDown(KeyCode.X))
+        {
+            
+            stateMachine.ChangeState(new PlayerParry());
+        }
     }
 }
