@@ -11,7 +11,7 @@ public class Damager : MonoBehaviour
     public GameObject owner;
     //Alignment is if the damage is for enemies or players
     
-    [SerializeField] DMG_ALIGN damageAlign = DMG_ALIGN.PLAYERDMG;
+    [SerializeField] public DMG_ALIGN damageAlign = DMG_ALIGN.PLAYERDMG;
     public float damage = 10;
     //how long to stun an enemy in seconds
     public int hitstun = 30;
